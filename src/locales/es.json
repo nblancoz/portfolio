@@ -1,0 +1,31 @@
+{
+  "site": {
+    "title": "Mi Portafolio",
+    "description": "Portafolio profesional de desarrollo de software",
+    "availableForWork": "Disponible para nuevos proyectos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "education": "Estudios",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes alguna propuesta o quieres conectar? Envíame un mensaje.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "¿En qué puedo ayudarte?",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
+    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  }
+}

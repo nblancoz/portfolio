@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #090a0f;
+    color: #e2e8f0;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
