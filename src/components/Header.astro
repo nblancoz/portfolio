@@ -1,4 +1,5 @@
 ---
+import Logo from '@/components/Logo.astro';
 import {
   getLocalizedPath,
   getSwitchLocalePath,
@@ -34,14 +35,17 @@ const enPath = getSwitchLocalePath(Astro.url, 'en');
   <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
     <a
       href={getLocalizedPath('/', lang)}
-      class="group flex items-center gap-1.5 font-mono text-sm font-medium tracking-tight"
+      class="group flex items-center gap-2 font-mono text-sm font-medium tracking-tight"
     >
-      <span class="text-emerald-400">~</span>
-      <span class="text-zinc-500">/</span>
-      <span class="text-zinc-100 transition-colors group-hover:text-emerald-400">
-        nicolasblanco.dev
-      </span>
-      <span class="ml-0.5 inline-block h-4 w-2 origin-center animate-terminal-blink bg-emerald-400"></span>
+      <Logo size={26} class="shrink-0 transition-transform group-hover:scale-105" />
+      <div class="flex items-center gap-1.5">
+        <span class="text-emerald-400">~</span>
+        <span class="text-zinc-500">/</span>
+        <span class="text-zinc-100 transition-colors group-hover:text-emerald-400">
+          nicolasblanco.dev
+        </span>
+        <span class="ml-0.5 inline-block h-4 w-2 origin-center animate-terminal-blink bg-emerald-400"></span>
+      </div>
     </a>
     <nav class="hidden items-center gap-7 text-sm font-medium md:flex">
       {navItems.map((item) => (
