@@ -13,10 +13,17 @@ interface Props {
 const { lang } = Astro.props;
 const translate = useTranslations(lang);
 
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
+const isExperience =
+  currentPath === '/experience' ||
+  currentPath === '/experiencia' ||
+  currentPath === '/en/experience';
+
 const navItems = [
-  { key: 'nav.home' as const, path: '/', active: true },
+  { key: 'nav.home' as const, path: '/', active: isHome },
   { key: 'nav.projects' as const, path: '#', active: false },
-  { key: 'nav.experience' as const, path: '#', active: false },
+  { key: 'nav.experience' as const, path: '/experience', active: isExperience },
   { key: 'nav.education' as const, path: '#', active: false },
   { key: 'nav.contact' as const, path: '#', active: false },
 ];
@@ -41,7 +48,7 @@ const enPath = getSwitchLocalePath(Astro.url, 'en');
     <nav class="hidden items-center gap-7 text-sm font-medium md:flex">
       {navItems.map((item) => (
         <a
-          href={item.active ? getLocalizedPath('/', lang) : '#'}
+          href={item.path === '#' ? '#' : getLocalizedPath(item.path, lang)}
           class:list={[
             'transition-colors',
             item.active
@@ -84,7 +91,7 @@ const enPath = getSwitchLocalePath(Astro.url, 'en');
     <nav class="flex gap-4 text-xs font-medium">
       {navItems.map((item) => (
         <a
-          href={item.active ? getLocalizedPath('/', lang) : '#'}
+          href={item.path === '#' ? '#' : getLocalizedPath(item.path, lang)}
           class:list={[
             'whitespace-nowrap py-1 transition-colors',
             item.active ? 'font-semibold text-emerald-400' : 'text-zinc-400 hover:text-zinc-200',

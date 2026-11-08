@@ -5,7 +5,7 @@
     "metaTitle": "Nicolás Blanco Zappalà | Ingeniero de Software",
     "metaDescription": "Desarrollador MERN Full Stack con experiencia en la creación de aplicaciones web escalables utilizando TypeScript, React, Node.js y Arquitectura Hexagonal.",
     "availableForWork": "Ingeniero de Software @ Capgemini • Valencia, ES",
-    "cvFile": "/cv-nicolas-blanco-es.pdf"
+    "cvFile": "https://cv.nicolasblanco.dev/cv-nicolas-blanco-es.pdf"
   },
   "nav": {
     "home": "Home",
@@ -18,6 +18,14 @@
     "rights": "Nicolás Blanco Zappalà",
     "license": "Licencia MIT",
     "downloadCv": "CV.pdf"
+  },
+  "experiencePage": {
+    "metaTitle": "Experiencia",
+    "metaDescription": "Historial profesional de Nicolás Blanco Zappalà construyendo sistemas en producción para banca digital y plataformas cloud.",
+    "terminalTag": "~/nicolasblanco.dev/experiencia",
+    "title": "Trayectoria Profesional",
+    "description": "Historial construyendo sistemas en producción para banca digital y healthtech B2B, priorizando el desacoplamiento de dominio, contratos tipados y pruebas automatizadas.",
+    "currentBadge": "Actual"
   },
   "home": {
     "hero": {
@@ -44,17 +52,17 @@
       "sectionTag": "// 02. Experiencia Laboral",
       "viewAll": "Ver detalle completo",
       "job1Title": "Ingeniero de Software",
-      "job1Company": "@ Capgemini",
+      "job1Company": "@ Capgemini (Loewe · Openbank)",
       "job1Period": "Marzo 2025 — Actual",
-      "job1Description": "Diseño, desarrollo y mantenimiento de aplicaciones web modernas con React y TypeScript. Arquitectura Hexagonal, gestión eficiente del estado con custom hooks, integración de APIs REST y testing automatizado con Jest en metodología ágil Scrum.",
-      "job2Title": "Desarrollador Backend",
+      "job1Description": "Mantenimiento y resolución de bugs en la plataforma e-commerce de Loewe (SFCC, React, TS), y desarrollo de módulos core para el onboarding bancario de Openbank bajo Arquitectura Hexagonal y Jest.",
+      "job2Title": "Software Developer",
       "job2Company": "@ Omek Biotech",
       "job2Period": "Agosto 2024 — Diciembre 2024",
-      "job2Description": "Diseño e implementación de servicios backend y APIs REST para plataforma biotecnológica, integración de endpoints, gestión de datos y colaboración técnica continua.",
-      "job3Title": "Desarrollador de Software (Prácticas)",
+      "job2Description": "Backend serverless en Cloudflare Workers y Hono para plataforma B2B medtech (FDA/CE). Modelado en Prisma/D1, caché en KV, validación con Zod y flujos con OpenAI.",
+      "job3Title": "Software Engineering Intern",
       "job3Company": "@ Capgemini",
       "job3Period": "Febrero 2024 — Julio 2024",
-      "job3Description": "Desarrollo frontend en React y TypeScript, creación de componentes reutilizables, integración de servicios REST e iniciación en flujos ágiles con Scrum y testing con Jest."
+      "job3Description": "Modernización y refactorización de aplicación legacy hacia React, TypeScript, Arquitectura Hexagonal y DDD en entorno colaborativo Scrum."
     },
     "projects": {
       "sectionTag": "// 03. Proyectos Destacados",

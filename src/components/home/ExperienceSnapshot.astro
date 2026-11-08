@@ -1,6 +1,6 @@
 ---
 import ArrowRight from '@/components/icons/ArrowRight.astro';
-import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+import { getLocalizedPath, useTranslations, type SupportedLanguage } from '@/i18n/utils';
 
 interface Props {
   lang: SupportedLanguage;
@@ -16,7 +16,7 @@ const translate = useTranslations(lang);
       {translate('home.experience.sectionTag')}
     </h2>
     <a
-      href="#"
+      href={getLocalizedPath('/experience', lang)}
       class="group flex items-center gap-1 font-mono text-xs text-emerald-400 hover:underline"
     >
       <span>{translate('home.experience.viewAll')}</span>

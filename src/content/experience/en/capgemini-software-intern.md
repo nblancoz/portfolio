@@ -1,25 +1,26 @@
 ---
 title: 'Software Developer (Intern)'
 company: 'Capgemini'
-location: 'Valencia, Spain'
+roleContext: 'Legacy Modernization & Web Architecture'
+location: 'Valencia, ES (Hybrid)'
 period: 'February 2024 — July 2024'
 current: false
 order: 3
 skills:
   - 'React'
   - 'TypeScript'
-  - 'JavaScript'
-  - 'Tailwind'
-  - 'REST APIs'
-  - 'Jest'
-description: 'Frontend development with React and TypeScript, API consumption, and introduction to agile workflows.'
+  - 'Hexagonal Architecture'
+  - 'DDD'
+  - 'Clean Architecture'
+  - 'Git'
+  - 'Agile / Scrum'
+description: 'Participated in the migration and modernization of a legacy enterprise application toward a scalable, maintainable architecture using React and TypeScript.'
+highlights:
+  - 'Refactored class-based legacy codebases into functional architectures adhering to clean code and SOLID principles.'
+  - 'Implemented hexagonal architecture and Domain-Driven Design (DDD) patterns to cleanly isolate responsibilities and improve codebase extensibility.'
+  - 'Frontend engineering with React and TypeScript, leveraging strict types and modular reusable components.'
+  - 'Enhanced maintainability, testability, and code organization through modern software engineering patterns.'
+  - 'Collaborated within an agile Scrum environment alongside cross-functional developers and technical leads.'
 ---
 
-Internship focused on modern web engineering in an enterprise consulting environment.
-
-### Key Responsibilities:
-
-- **React UI Development**: Crafting modular, responsive components with React, TypeScript, and Tailwind.
-- **API Consumption**: Connecting user interfaces with REST APIs and handling async state.
-- **Code Quality**: Writing initial test suites with Jest and following maintainable coding practices.
-- **Agile Methodologies**: Learning Git/GitLab version control workflows and participating in Scrum ceremonies.
+Participated in the migration and modernization of a legacy enterprise application toward a scalable, maintainable architecture using React and TypeScript.

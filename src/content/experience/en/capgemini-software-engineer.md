@@ -1,27 +1,29 @@
 ---
 title: 'Software Engineer'
 company: 'Capgemini'
-location: 'Valencia, Spain'
+roleContext: 'Loewe (Current) · Openbank (ODS)'
+location: 'Valencia, ES (Hybrid)'
 period: 'March 2025 — Present'
 current: true
 order: 1
 skills:
   - 'TypeScript'
   - 'React'
-  - 'Node.js'
-  - 'Jest'
-  - 'Scrum'
+  - 'Salesforce Commerce Cloud'
+  - 'styled-components'
   - 'Hexagonal Architecture'
-  - 'REST APIs'
-description: 'Designing, developing, and maintaining modern web applications using React and TypeScript under Hexagonal Architecture principles.'
+  - 'DDD'
+  - 'Jest'
+  - 'a11y'
+  - 'Figma'
+  - 'Jira'
+  - 'GitHub'
+description: "Software Engineer delivering enterprise web applications, maintaining and resolving defects for Loewe's global e-commerce platform, and developing core banking onboarding modules for Openbank."
+highlights:
+  - 'Loewe (Current): Debugging, ongoing maintenance, and defect/bug resolution in production for the global e-commerce platform using React, TypeScript, styled-components, and Salesforce Commerce Cloud (SFCC).'
+  - 'Openbank (ODS): Engineering banking onboarding modules under Hexagonal Architecture and DDD (ownership of access control flows, standby waiting states, and abandoned application recovery).'
+  - 'Testing & Quality: Designing and automating unit and integration test suites with Jest, preventing regressions across mission-critical business logic.'
+  - 'Best Practices & Delivery: Enforcing web accessibility (a11y) standards, release management via Jira and Quicksilver, design collaboration in Figma, and GitHub version control.'
 ---
 
-Developing and maintaining high-availability enterprise web applications with clean, decoupled architecture.
-
-### Key Responsibilities:
-
-- **Frontend Engineering with React & TypeScript**: Designing and building modular, reusable component libraries, leveraging custom hooks for state management, and enforcing strict typing.
-- **Hexagonal Architecture**: Applying clean architecture patterns and separating domain, application, and infrastructure layers for long-term scalability.
-- **REST API Integration**: Consuming, validating, and managing contracts with external endpoints and microservices.
-- **Automated Testing with Jest**: Unit and integration test coverage ensuring code reliability and preventing regressions.
-- **Agile Scrum Methodology**: Active daily participation in standups, sprint planning, refinements, and retrospectives.
+Software Engineer delivering enterprise web applications, maintaining and resolving defects for Loewe's global e-commerce platform, and developing core banking onboarding modules for Openbank.

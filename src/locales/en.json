@@ -5,7 +5,7 @@
     "metaTitle": "Nicolás Blanco Zappalà | Software Engineer",
     "metaDescription": "Full Stack Developer experienced in building scalable web applications using TypeScript, React, Node.js, and Hexagonal Architecture.",
     "availableForWork": "Software Engineer @ Capgemini • Valencia, ES",
-    "cvFile": "/cv-nicolas-blanco-en.pdf"
+    "cvFile": "https://cv.nicolasblanco.dev/cv-nicolas-blanco-en.pdf"
   },
   "nav": {
     "home": "Home",
@@ -18,6 +18,14 @@
     "rights": "Nicolás Blanco Zappalà",
     "license": "MIT License",
     "downloadCv": "CV.pdf"
+  },
+  "experiencePage": {
+    "metaTitle": "Experience",
+    "metaDescription": "Professional track record of Nicolás Blanco Zappalà building production systems for digital banking and cloud platforms.",
+    "terminalTag": "~/nicolasblanco.dev/experience",
+    "title": "Professional Experience",
+    "description": "Track record building production systems for digital banking and B2B healthtech, prioritizing domain decoupling, typed contracts, and automated testing.",
+    "currentBadge": "Present"
   },
   "home": {
     "hero": {
@@ -44,17 +52,17 @@
       "sectionTag": "// 02. Professional Experience",
       "viewAll": "View full journey",
       "job1Title": "Software Engineer",
-      "job1Company": "@ Capgemini",
+      "job1Company": "@ Capgemini (Loewe · Openbank)",
       "job1Period": "March 2025 — Present",
-      "job1Description": "Designing, developing, and maintaining modern web applications using React and TypeScript. Implementing Hexagonal Architecture, custom hooks for state management, REST API integration, and Jest unit tests within Scrum workflows.",
-      "job2Title": "Backend Developer",
+      "job1Description": "Maintenance and bug fixes for Loewe's global e-commerce platform (SFCC, React, TS), and core banking module engineering for Openbank with Hexagonal Architecture and Jest.",
+      "job2Title": "Software Developer",
       "job2Company": "@ Omek Biotech",
       "job2Period": "August 2024 — December 2024",
-      "job2Description": "Designing and building backend services and REST APIs for a biotech platform, endpoint integration, data handling, and continuous technical delivery.",
-      "job3Title": "Software Developer (Intern)",
+      "job2Description": "Serverless backend on Cloudflare Workers and Hono for a B2B medtech platform (FDA/CE). Prisma/D1 modeling, KV caching, Zod contracts, and OpenAI pipelines.",
+      "job3Title": "Software Engineering Intern",
       "job3Company": "@ Capgemini",
       "job3Period": "February 2024 — July 2024",
-      "job3Description": "Frontend development using React and TypeScript, building reusable component libraries, REST API consumption, and participating in agile ceremonies with Scrum."
+      "job3Description": "Modernization and refactoring of legacy applications toward React, TypeScript, Hexagonal Architecture, and DDD in an agile Scrum environment."
     },
     "projects": {
       "sectionTag": "// 03. Featured Projects",

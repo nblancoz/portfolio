@@ -1,0 +1,105 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArrowRight from '@/components/icons/ArrowRight.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+
+const allEntries = await getCollection('experience', ({ id }) => id.startsWith(`${lang}/`));
+const sortedEntries = allEntries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  lang={lang}
+  title={translate('experiencePage.metaTitle')}
+  description={translate('experiencePage.metaDescription')}
+>
+  <div class="space-y-12">
+    <header class="space-y-3 border-b border-zinc-800/80 pb-8">
+      <div class="font-mono text-xs uppercase tracking-wider text-emerald-400">
+        {translate('experiencePage.terminalTag')}
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+        {translate('experiencePage.title')}
+      </h1>
+      <p class="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+        {translate('experiencePage.description')}
+      </p>
+    </header>
+    <div class="relative space-y-12 before:absolute before:inset-0 before:left-3 before:w-px before:bg-zinc-800">
+      {sortedEntries.map((entry, index) => {
+        const isFirst = index === 0;
+        const isSecond = index === 1;
+        const dotColor = isFirst ? 'bg-emerald-400' : isSecond ? 'bg-zinc-600' : 'bg-zinc-700';
+        const cardStyle = isFirst
+          ? 'bg-zinc-900/50 border-zinc-800/90'
+          : isSecond
+            ? 'bg-zinc-900/30 border-zinc-800/70'
+            : 'bg-zinc-900/20 border-zinc-800/50';
+        const bulletColor = isFirst
+          ? 'text-emerald-400'
+          : isSecond
+            ? 'text-indigo-400'
+            : 'text-amber-400';
+        return (
+          <article class="relative pl-10">
+            <span
+              class:list={[
+                'absolute left-1.75 top-2 h-2.5 w-2.5 rounded-full ring-4 ring-zinc-950',
+                dotColor,
+              ]}
+            />
+            <div class:list={['rounded-2xl border p-6 sm:p-8 space-y-6', cardStyle]}>
+              <div class="flex flex-col justify-between gap-2 border-b border-zinc-800/60 pb-4 sm:flex-row sm:items-center">
+                <div>
+                  <div class="flex items-center gap-2.5">
+                    <h2 class="text-xl font-bold text-zinc-100">{entry.data.title}</h2>
+                    {entry.data.current && (
+                      <span class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[11px] text-emerald-400">
+                        {translate('experiencePage.currentBadge')}
+                      </span>
+                    )}
+                  </div>
+                  <p class="mt-0.5 text-sm font-medium text-zinc-400">
+                    {entry.data.company}
+                    {entry.data.roleContext ? ` · ${entry.data.roleContext}` : ''}
+                  </p>
+                </div>
+                <div class="font-mono text-xs text-zinc-500 sm:text-right">
+                  <div>{entry.data.period}</div>
+                  <div class="text-zinc-600">{entry.data.location}</div>
+                </div>
+              </div>
+              <div class="space-y-3 text-sm leading-relaxed text-zinc-300">
+                <p>{entry.data.description}</p>
+                {entry.data.highlights && entry.data.highlights.length > 0 && (
+                  <ul class="list-none space-y-2 text-zinc-400">
+                    {entry.data.highlights.map((highlight) => (
+                      <li class="flex items-start gap-2.5">
+                        <ArrowRight size={12} class:list={['mt-1 shrink-0', bulletColor]} />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-300">
+                {entry.data.skills.map((skill) => (
+                  <span class="rounded-md border border-zinc-800 bg-zinc-950 px-2.5 py-1">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
