@@ -1,0 +1,34 @@
+---
+import ArrowRight from '@/components/icons/ArrowRight.astro';
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+---
+
+<section class="flex flex-col items-start justify-between gap-6 rounded-2xl border border-zinc-800 bg-linear-to-br from-zinc-900 via-zinc-900/90 to-zinc-950 p-6 sm:flex-row sm:items-center sm:p-8">
+  <div class="space-y-1.5">
+    <div class="font-mono text-xs text-emerald-400">{translate('home.educationBanner.badge')}</div>
+    <h3 class="text-lg font-semibold text-zinc-100">{translate('home.educationBanner.title')}</h3>
+    <p class="text-sm text-zinc-400">{translate('home.educationBanner.description')}</p>
+  </div>
+  <div class="flex shrink-0 items-center gap-3">
+    <a
+      href="#"
+      class="rounded-lg bg-zinc-800 px-4 py-2 font-mono text-xs text-zinc-200 transition-colors hover:bg-zinc-700"
+    >
+      {translate('home.educationBanner.viewEducation')}
+    </a>
+    <a
+      href="mailto:nblancozappala@gmail.com"
+      class="group flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-2 font-mono text-xs font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
+    >
+      <span>{translate('home.educationBanner.contact')}</span>
+      <ArrowRight size={12} class="transition-transform group-hover:translate-x-0.5" />
+    </a>
+  </div>
+</section>

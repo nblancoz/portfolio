@@ -1,0 +1,62 @@
+---
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+
+const backendSkills = ['Node.js', 'ExpressJS', 'REST APIs', 'Sequelize', 'Mongoose', 'Postman'];
+const frontendSkills = ['TypeScript', 'React', 'Tailwind', 'JavaScript', 'Custom Hooks'];
+const craftsmanshipSkills = ['Hexagonal Arch', 'PostgreSQL', 'MongoDB', 'Jest', 'Scrum', 'Git'];
+---
+
+<section class="space-y-4">
+  <div class="flex items-center justify-between">
+    <h2 class="font-mono text-xs uppercase tracking-wider text-zinc-500">
+      {translate('home.bento.sectionTag')}
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <div class="space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-900/50 p-6 transition-colors hover:border-zinc-700/80">
+      <div class="font-mono text-xs text-emerald-400">{translate('home.bento.backendTag')}</div>
+      <h3 class="text-lg font-semibold text-zinc-100">{translate('home.bento.backendTitle')}</h3>
+      <p class="text-sm leading-relaxed text-zinc-400">
+        {translate('home.bento.backendDescription')}
+      </p>
+      <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-300">
+        {backendSkills.map((skill) => (
+          <span class="rounded border border-zinc-700/50 bg-zinc-800/80 px-2 py-0.5">{skill}</span>
+        ))}
+      </div>
+    </div>
+    <div class="space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-900/50 p-6 transition-colors hover:border-zinc-700/80">
+      <div class="font-mono text-xs text-indigo-400">{translate('home.bento.frontendTag')}</div>
+      <h3 class="text-lg font-semibold text-zinc-100">{translate('home.bento.frontendTitle')}</h3>
+      <p class="text-sm leading-relaxed text-zinc-400">
+        {translate('home.bento.frontendDescription')}
+      </p>
+      <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-300">
+        {frontendSkills.map((skill) => (
+          <span class="rounded border border-zinc-700/50 bg-zinc-800/80 px-2 py-0.5">{skill}</span>
+        ))}
+      </div>
+    </div>
+    <div class="space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-900/50 p-6 transition-colors hover:border-zinc-700/80">
+      <div class="font-mono text-xs text-amber-400">{translate('home.bento.craftsmanshipTag')}</div>
+      <h3 class="text-lg font-semibold text-zinc-100">
+        {translate('home.bento.craftsmanshipTitle')}
+      </h3>
+      <p class="text-sm leading-relaxed text-zinc-400">
+        {translate('home.bento.craftsmanshipDescription')}
+      </p>
+      <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-300">
+        {craftsmanshipSkills.map((skill) => (
+          <span class="rounded border border-zinc-700/50 bg-zinc-800/80 px-2 py-0.5">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

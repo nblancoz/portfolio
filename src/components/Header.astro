@@ -1,0 +1,98 @@
+---
+import {
+  getLocalizedPath,
+  getSwitchLocalePath,
+  useTranslations,
+  type SupportedLanguage,
+} from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+
+const navItems = [
+  { key: 'nav.home' as const, path: '/', active: true },
+  { key: 'nav.projects' as const, path: '#', active: false },
+  { key: 'nav.experience' as const, path: '#', active: false },
+  { key: 'nav.education' as const, path: '#', active: false },
+  { key: 'nav.contact' as const, path: '#', active: false },
+];
+
+const esPath = getSwitchLocalePath(Astro.url, 'es');
+const enPath = getSwitchLocalePath(Astro.url, 'en');
+---
+
+<header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+    <a
+      href={getLocalizedPath('/', lang)}
+      class="group flex items-center gap-1.5 font-mono text-sm font-medium tracking-tight"
+    >
+      <span class="text-emerald-400">~</span>
+      <span class="text-zinc-500">/</span>
+      <span class="text-zinc-100 transition-colors group-hover:text-emerald-400">
+        nicolasblanco.dev
+      </span>
+      <span class="ml-0.5 inline-block h-4 w-2 origin-center animate-terminal-blink bg-emerald-400"></span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-medium md:flex">
+      {navItems.map((item) => (
+        <a
+          href={item.active ? getLocalizedPath('/', lang) : '#'}
+          class:list={[
+            'transition-colors',
+            item.active
+              ? 'relative text-zinc-100 after:absolute after:-bottom-5.25 after:left-0 after:h-0.5 after:w-full after:bg-emerald-400'
+              : 'text-zinc-400 hover:text-zinc-200',
+          ]}
+        >
+          {translate(item.key)}
+        </a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="flex items-center rounded-lg border border-zinc-800 bg-zinc-900 p-1 font-mono text-xs">
+        <a
+          href={esPath}
+          data-lang-switch
+          class:list={[
+            'rounded-md px-2 py-1 font-medium transition-all',
+            lang === 'es' ? 'bg-zinc-800 text-emerald-400' : 'text-zinc-500 hover:text-zinc-300',
+          ]}
+          aria-label="Español"
+        >
+          ES
+        </a>
+        <a
+          href={enPath}
+          data-lang-switch
+          class:list={[
+            'rounded-md px-2 py-1 font-medium transition-all',
+            lang === 'en' ? 'bg-zinc-800 text-emerald-400' : 'text-zinc-500 hover:text-zinc-300',
+          ]}
+          aria-label="English"
+        >
+          EN
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="flex overflow-x-auto border-t border-zinc-900 px-6 py-2 md:hidden">
+    <nav class="flex gap-4 text-xs font-medium">
+      {navItems.map((item) => (
+        <a
+          href={item.active ? getLocalizedPath('/', lang) : '#'}
+          class:list={[
+            'whitespace-nowrap py-1 transition-colors',
+            item.active ? 'font-semibold text-emerald-400' : 'text-zinc-400 hover:text-zinc-200',
+          ]}
+        >
+          {translate(item.key)}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

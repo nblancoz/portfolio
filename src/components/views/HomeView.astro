@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import BentoStack from '@/components/home/BentoStack.astro';
+import ExperienceSnapshot from '@/components/home/ExperienceSnapshot.astro';
+import FeaturedProjects from '@/components/home/FeaturedProjects.astro';
+import EducationBanner from '@/components/home/EducationBanner.astro';
+import type { SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+---
+
+<BaseLayout lang={lang}>
+  <div class="space-y-28">
+    <Hero lang={lang} />
+    <BentoStack lang={lang} />
+    <ExperienceSnapshot lang={lang} />
+    <FeaturedProjects lang={lang} />
+    <EducationBanner lang={lang} />
+  </div>
+</BaseLayout>

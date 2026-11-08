@@ -1,31 +1,79 @@
 {
   "site": {
-    "title": "Mi Portafolio",
-    "description": "Portafolio profesional de desarrollo de software",
-    "availableForWork": "Disponible para nuevos proyectos"
+    "title": "Nicolás Blanco",
+    "role": "Ingeniero de Software",
+    "metaTitle": "Nicolás Blanco Zappalà | Ingeniero de Software",
+    "metaDescription": "Desarrollador MERN Full Stack con experiencia en la creación de aplicaciones web escalables utilizando TypeScript, React, Node.js y Arquitectura Hexagonal.",
+    "availableForWork": "Ingeniero de Software @ Capgemini • Valencia, ES",
+    "cvFile": "/cv-nicolas-blanco-es.pdf"
   },
   "nav": {
-    "home": "Inicio",
-    "experience": "Experiencia",
+    "home": "Home",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "education": "Estudios",
     "contact": "Contacto"
   },
   "footer": {
-    "rights": "Todos los derechos reservados."
+    "rights": "Nicolás Blanco Zappalà",
+    "license": "Licencia MIT",
+    "downloadCv": "CV.pdf"
   },
-  "contact": {
-    "title": "Contacto",
-    "subtitle": "¿Tienes alguna propuesta o quieres conectar? Envíame un mensaje.",
-    "name": "Nombre",
-    "namePlaceholder": "Tu nombre",
-    "email": "Correo electrónico",
-    "emailPlaceholder": "tu@email.com",
-    "message": "Mensaje",
-    "messagePlaceholder": "¿En qué puedo ayudarte?",
-    "send": "Enviar mensaje",
-    "sending": "Enviando...",
-    "success": "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
-    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  "home": {
+    "hero": {
+      "status": "Ingeniero de Software @ Capgemini • Valencia, ES",
+      "name": "Nicolás Blanco Zappalà",
+      "headline": "Desarrollo Full Stack enfocado en código limpio, escalable y mantenible.",
+      "description": "Desarrollador Full Stack con experiencia en la creación de aplicaciones web modernas y de alta calidad utilizando TypeScript, React, Node.js, Express y bases de datos SQL y NoSQL. Especializado en diseño de componentes reutilizables, integración de APIs REST, testing automatizado con Jest y principios de Arquitectura Hexagonal.",
+      "exploreProjects": "Explorar Proyectos",
+      "downloadCv": "Descargar CV.pdf"
+    },
+    "bento": {
+      "sectionTag": "// 01. Ecosistema Técnico & Habilidades",
+      "backendTag": "[Backend & APIs]",
+      "backendTitle": "Servicios & APIs REST",
+      "backendDescription": "Desarrollo de APIs REST robustas, consumo e integración de servicios externos y manipulación de datos con ORMs y ODMs.",
+      "frontendTag": "[Frontend Engineering]",
+      "frontendTitle": "Interfaces Web Modernas",
+      "frontendDescription": "Creación de aplicaciones web con React y TypeScript, componentes desacoplados, gestión eficiente del estado mediante custom hooks y estilizado con Tailwind.",
+      "craftsmanshipTag": "[Arquitectura & Calidad]",
+      "craftsmanshipTitle": "Buenas Prácticas & Testing",
+      "craftsmanshipDescription": "Desarrollo bajo Arquitectura Hexagonal para máxima mantenibilidad, pruebas unitarias y de integración con Jest, y trabajo diario con Scrum."
+    },
+    "experience": {
+      "sectionTag": "// 02. Experiencia Laboral",
+      "viewAll": "Ver detalle completo",
+      "job1Title": "Ingeniero de Software",
+      "job1Company": "@ Capgemini",
+      "job1Period": "Marzo 2025 — Actual",
+      "job1Description": "Diseño, desarrollo y mantenimiento de aplicaciones web modernas con React y TypeScript. Arquitectura Hexagonal, gestión eficiente del estado con custom hooks, integración de APIs REST y testing automatizado con Jest en metodología ágil Scrum.",
+      "job2Title": "Desarrollador Backend",
+      "job2Company": "@ Omek Biotech",
+      "job2Period": "Agosto 2024 — Diciembre 2024",
+      "job2Description": "Diseño e implementación de servicios backend y APIs REST para plataforma biotecnológica, integración de endpoints, gestión de datos y colaboración técnica continua.",
+      "job3Title": "Desarrollador de Software (Prácticas)",
+      "job3Company": "@ Capgemini",
+      "job3Period": "Febrero 2024 — Julio 2024",
+      "job3Description": "Desarrollo frontend en React y TypeScript, creación de componentes reutilizables, integración de servicios REST e iniciación en flujos ágiles con Scrum y testing con Jest."
+    },
+    "projects": {
+      "sectionTag": "// 03. Proyectos Destacados",
+      "viewAll": "Explorar repositorio de proyectos",
+      "project1Badge": "En desarrollo • AI & Real-Time Voice",
+      "project1Title": "AI Voice Tutor LMS",
+      "project1Description": "Actualmente en fase de desarrollo. Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal automatizada.",
+      "project1Stack": "TypeScript • Node.js • NeonDB • OpenAI Realtime API",
+      "project2Badge": "Full-Stack • MERN & Hexagonal",
+      "project2Title": "GymQuest",
+      "project2Description": "Aplicación full-stack para planificación y seguimiento de entrenamientos de fuerza, construida bajo principios de Arquitectura Hexagonal.",
+      "project2Stack": "React • ExpressJS • PostgreSQL • MongoDB • Zod"
+    },
+    "educationBanner": {
+      "badge": "Datos Académicos",
+      "title": "Grado en Ingeniería Informática & Grado Superior DAW",
+      "description": "Universidad Europea (Ingeniería Informática y DAW) · The Bridge - EDEM (Bootcamp Full Stack).",
+      "viewEducation": "Ver Estudios",
+      "contact": "Contactar"
+    }
   }
 }

@@ -1,4 +1,24 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/jetbrains-mono';
+
+@theme {
+  --font-sans: 'Inter Variable', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --animate-terminal-blink: terminal-expand 1.2s ease-in-out infinite;
+
+  @keyframes terminal-expand {
+    0%,
+    20%,
+    80%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0);
+    }
+  }
+}
 
 @layer base {
   :root {
@@ -10,8 +30,19 @@
   }
 
   body {
-    background-color: #090a0f;
-    color: #e2e8f0;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
   }
 }

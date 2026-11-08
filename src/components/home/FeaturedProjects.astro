@@ -1,0 +1,73 @@
+---
+import ArrowRight from '@/components/icons/ArrowRight.astro';
+import ArrowUpRight from '@/components/icons/ArrowUpRight.astro';
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+---
+
+<section class="space-y-6">
+  <div class="flex items-center justify-between border-b border-zinc-800/80 pb-3">
+    <h2 class="font-mono text-xs uppercase tracking-wider text-zinc-500">
+      {translate('home.projects.sectionTag')}
+    </h2>
+    <a
+      href="#"
+      class="group flex items-center gap-1 font-mono text-xs text-emerald-400 hover:underline"
+    >
+      <span>{translate('home.projects.viewAll')}</span>
+      <ArrowRight size={12} class="transition-transform group-hover:translate-x-0.5" />
+    </a>
+  </div>
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+    <div class="group flex flex-col justify-between space-y-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 transition-all hover:border-emerald-500/40 hover:bg-zinc-900/70">
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="rounded border border-amber-500/20 bg-amber-500/10 px-2 py-0.5 font-mono text-xs text-amber-400">
+            {translate('home.projects.project1Badge')}
+          </span>
+          <ArrowUpRight
+            size={13}
+            class="text-zinc-500 transition-colors group-hover:text-zinc-300"
+          />
+        </div>
+        <h3 class="text-lg font-semibold text-zinc-100 transition-colors group-hover:text-emerald-400">
+          {translate('home.projects.project1Title')}
+        </h3>
+        <p class="text-sm leading-relaxed text-zinc-400">
+          {translate('home.projects.project1Description')}
+        </p>
+      </div>
+      <div class="border-t border-zinc-800/60 pt-2 font-mono text-xs text-zinc-500">
+        {translate('home.projects.project1Stack')}
+      </div>
+    </div>
+    <div class="group flex flex-col justify-between space-y-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 transition-all hover:border-emerald-500/40 hover:bg-zinc-900/70">
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="rounded border border-indigo-500/20 bg-indigo-500/10 px-2 py-0.5 font-mono text-xs text-indigo-400">
+            {translate('home.projects.project2Badge')}
+          </span>
+          <ArrowUpRight
+            size={13}
+            class="text-zinc-500 transition-colors group-hover:text-zinc-300"
+          />
+        </div>
+        <h3 class="text-lg font-semibold text-zinc-100 transition-colors group-hover:text-emerald-400">
+          {translate('home.projects.project2Title')}
+        </h3>
+        <p class="text-sm leading-relaxed text-zinc-400">
+          {translate('home.projects.project2Description')}
+        </p>
+      </div>
+      <div class="border-t border-zinc-800/60 pt-2 font-mono text-xs text-zinc-500">
+        {translate('home.projects.project2Stack')}
+      </div>
+    </div>
+  </div>
+</section>
