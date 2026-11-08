@@ -59,9 +59,9 @@
     "projects": {
       "sectionTag": "// 03. Proyectos Destacados",
       "viewAll": "Explorar repositorio de proyectos",
-      "project1Badge": "En desarrollo • AI & Real-Time Voice",
+      "project1Badge": "AI & Real-Time Voice",
       "project1Title": "AI Voice Tutor LMS",
-      "project1Description": "Actualmente en fase de desarrollo. Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal automatizada.",
+      "project1Description": "Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal automatizada.",
       "project1Stack": "TypeScript • Node.js • NeonDB • OpenAI Realtime API",
       "project2Badge": "Full-Stack • MERN & Hexagonal",
       "project2Title": "GymQuest",
