@@ -214,6 +214,12 @@ importers:
       '@astrojs/vercel':
         specifier: ^11.0.20
         version: 11.0.20(astro@7.4.7(@vercel/functions@3.11.0)(jiti@2.7.0)(yaml@2.9.1))(react@19.3.1)
+      '@vercel/analytics':
+        specifier: ^2.0.1
+        version: 2.0.1(react@19.3.1)
+      '@vercel/speed-insights':
+        specifier: ^2.1.0
+        version: 2.1.0(react@19.3.1)
       astro:
         specifier: ^7.4.7
         version: 7.4.7(@vercel/functions@3.11.0)(jiti@2.7.0)(yaml@2.9.1)
@@ -1311,6 +1317,32 @@ packages:
 
   '@vercel/routing-utils@6.6.1':
     resolution: {integrity: sha512-rIVybdiezAVE4KZVjXRrKHUEoUNW1RzNTkcUR/0v1rsOnxn2EqNjleNP7HFoPlr0vfWvXUUtUKPTM7AFxIcJnw==}
+
+  '@vercel/speed-insights@2.1.0':
+    resolution: {integrity: sha512-tkDiIEjjmlwPpTFnOK14hBhsRLMo5yoCeK2Er3AHWlL7WTzHgFSyItps3TOW0HukErUlYlaUeHiVLCyfiE4WAA==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2 || ^3 || ^3.0.0-next.0
+      next: '>= 13'
+      nuxt: '>= 3'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      nuxt:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vitejs/plugin-react@6.2.1':
     resolution: {integrity: sha512-9KyWCij3r0+qLG3Q62vBmv0VyevmYibAtxaCIVK9o0k6CXgaajZRIe8tpfchQcdZArJ5b/7OrIz4W3b2uxVRDA==}
@@ -3654,6 +3686,10 @@ snapshots:
       path-to-regexp-updated: path-to-regexp@6.3.0
     optionalDependencies:
       ajv: 6.15.0
+
+  '@vercel/speed-insights@2.1.0(react@19.3.1)':
+    optionalDependencies:
+      react: 19.3.1
 
   '@vitejs/plugin-react@6.2.1(vite@8.3.6(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:

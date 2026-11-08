@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import { useTranslations, type SupportedLanguage } from '../i18n/utils';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   lang: SupportedLanguage;
@@ -46,5 +48,7 @@ const translate = useTranslations(lang);
         </a>
       </div>
     </main>
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
