@@ -1,23 +1,23 @@
 ---
 title: 'AI Voice Tutor LMS'
-description: 'LMS platform with real-time voice language tutoring, ultra-low latency, and automated multimodal evaluation.'
-badge: 'AI & Real-Time Voice'
-stack:
-  - 'TypeScript'
-  - 'Node.js'
-  - 'NeonDB'
-  - 'OpenAI Realtime API'
-  - 'WebSockets'
+badge: 'MVP · Multimodal AI'
 order: 1
 featured: true
-githubUrl: 'https://github.com/nblancoz'
-demoUrl: 'https://nicolasblanco.dev'
+accentColor: 'emerald'
+privateRepo: true
+description: 'Learning Management System (LMS) platform designed for language acquisition through real-time voice conversations with an AI tutor.'
+architecture:
+  backend:
+    title: '// Architecture & Backend'
+    description: 'Node.js and Express backend deployed on Render, managing low-latency sessions with OpenAI Realtime API / Gemini multimodal models and relational persistence on NeonDB (PostgreSQL).'
+  frontend:
+    title: '// Frontend & Contracts'
+    description: 'Reactive interface deployed on Vercel with live audio streaming and capture, Zod-validated state schemas, and strict per-session token cost enforcement.'
+stack:
+  - 'TypeScript'
+  - 'React'
+  - 'Node.js / Express'
+  - 'NeonDB (PostgreSQL)'
+  - 'OpenAI Realtime API'
+  - 'Vercel & Render'
 ---
-
-Interactive voice-first language learning platform designed for seamless real-time conversation practice.
-
-### Core Features:
-
-- **Bidirectional Streaming Audio**: Low-latency voice pipelines powered by WebSockets and OpenAI Realtime API.
-- **Multimodal Evaluation**: Instant feedback on grammar, pronunciation, vocabulary richness, and fluency.
-- **Edge Persistence**: Serverless architecture coupled with serverless PostgreSQL (NeonDB).

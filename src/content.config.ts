@@ -24,11 +24,29 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string(),
     badge: z.string(),
-    stack: z.array(z.string()),
+    year: z.string().optional(),
     order: z.number(),
     featured: z.boolean().default(false),
+    accentColor: z.enum(['emerald', 'indigo', 'amber']).default('emerald'),
+    privateRepo: z.boolean().default(false),
+    privateRepoLabel: z.string().optional(),
     githubUrl: z.string().url().optional(),
+    githubClientUrl: z.string().url().optional(),
+    githubServerUrl: z.string().url().optional(),
     demoUrl: z.string().url().optional(),
+    architecture: z
+      .object({
+        backend: z.object({
+          title: z.string(),
+          description: z.string(),
+        }),
+        frontend: z.object({
+          title: z.string(),
+          description: z.string(),
+        }),
+      })
+      .optional(),
+    stack: z.array(z.string()),
   }),
 });
 

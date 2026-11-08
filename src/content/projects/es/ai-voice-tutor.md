@@ -1,23 +1,23 @@
 ---
 title: 'AI Voice Tutor LMS'
-description: 'Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal automatizada.'
-badge: 'AI & Real-Time Voice'
-stack:
-  - 'TypeScript'
-  - 'Node.js'
-  - 'NeonDB'
-  - 'OpenAI Realtime API'
-  - 'WebSockets'
+badge: 'MVP · AI Multimodal'
 order: 1
 featured: true
-githubUrl: 'https://github.com/nblancoz'
-demoUrl: 'https://nicolasblanco.dev'
+accentColor: 'emerald'
+privateRepo: true
+description: 'Plataforma Learning Management System (LMS) diseñada para el aprendizaje de idiomas mediante sesiones de conversación por voz en tiempo real con un tutor de Inteligencia Artificial.'
+architecture:
+  backend:
+    title: '// Arquitectura & Backend'
+    description: 'Backend en Node.js y Express desplegado en Render, gestionando sesiones de baja latencia con OpenAI Realtime API / modelos multimodales de Gemini y persistencia relacional en NeonDB (PostgreSQL).'
+  frontend:
+    title: '// Frontend & Contratos'
+    description: 'Interfaz reactiva desplegada en Vercel con captura y streaming de audio en vivo, validación de estados con Zod y control estricto de costes de tokens por sesión.'
+stack:
+  - 'TypeScript'
+  - 'React'
+  - 'Node.js / Express'
+  - 'NeonDB (PostgreSQL)'
+  - 'OpenAI Realtime API'
+  - 'Vercel & Render'
 ---
-
-Sistema integral de aprendizaje con interacción por voz en tiempo real diseñado para entrenamiento conversacional fluido.
-
-### Características principales:
-
-- **Audio bidireccional streaming**: Transmisión de voz con WebSockets y bufferización mínima para respuesta instantánea.
-- **Evaluación fonética y gramatical**: Análisis en tiempo real de entonación, pronunciación y precisión léxica.
-- **Persistencia en el Edge**: Arquitectura serverless conectada a base de datos PostgreSQL serverless (NeonDB).

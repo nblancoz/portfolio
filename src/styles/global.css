@@ -5,7 +5,7 @@
 @theme {
   --font-sans: 'Inter Variable', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --animate-terminal-blink: terminal-expand 1.2s ease-in-out infinite;
+  --animate-terminal-blink: terminal-expand 1.8s ease-in-out infinite;
 
   @keyframes terminal-expand {
     0%,

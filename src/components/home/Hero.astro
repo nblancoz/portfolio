@@ -1,7 +1,7 @@
 ---
 import ArrowDown from '@/components/icons/ArrowDown.astro';
 import ArrowRight from '@/components/icons/ArrowRight.astro';
-import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+import { getLocalizedPath, useTranslations, type SupportedLanguage } from '@/i18n/utils';
 
 interface Props {
   lang: SupportedLanguage;
@@ -13,13 +13,13 @@ const translate = useTranslations(lang);
 
 <section class="space-y-6">
   <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-xs text-emerald-400">
-    <span class="relative flex h-2 w-2">
-      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-      <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+    <span class="relative flex size-2">
+      <span class="absolute inline-flex animate-ping rounded-full bg-emerald-400 opacity-75 size-full"></span>
+      <span class="relative inline-flex rounded-full bg-emerald-400 size-2"></span>
     </span>
     <span>{translate('home.hero.status')}</span>
   </div>
-  <h1 class="text-4xl font-bold tracking-tight text-zinc-50 sm:text-6xl leading-[1.1]">
+  <h1 class="text-4xl font-bold tracking-tight text-zinc-50 sm:text-6xl leading-1.1">
     {translate('home.hero.name')}
     <br />
     <span class="text-3xl font-semibold text-zinc-400 sm:text-5xl">
@@ -31,7 +31,7 @@ const translate = useTranslations(lang);
   </p>
   <div class="flex flex-wrap items-center gap-4 pt-2">
     <a
-      href="#proyectos"
+      href={getLocalizedPath('/projects', lang)}
       class="group flex items-center gap-2 rounded-lg bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-colors hover:bg-white"
     >
       <span>{translate('home.hero.exploreProjects')}</span>

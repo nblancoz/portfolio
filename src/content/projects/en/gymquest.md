@@ -1,23 +1,27 @@
 ---
 title: 'GymQuest'
-description: 'Full-stack application for strength training planning and progress tracking, built with Hexagonal Architecture principles.'
-badge: 'Full-Stack • MERN & Hexagonal'
-stack:
-  - 'React'
-  - 'ExpressJS'
-  - 'PostgreSQL'
-  - 'MongoDB'
-  - 'Zod'
-  - 'Tailwind CSS'
-order: 2
+badge: 'Full-Stack · Capstone Project'
+year: '2024'
+order: 4
 featured: true
-githubUrl: 'https://github.com/nblancoz'
+accentColor: 'indigo'
+privateRepo: false
+githubClientUrl: 'https://github.com/nblancoz/tfg-daw-frontend'
+githubServerUrl: 'https://github.com/nblancoz/tfg-daw-backend'
+description: 'Web platform for hypertrophy training programming (PPL / Upper-Lower) and quantitative tracking of progressive overload and training volume.'
+architecture:
+  backend:
+    title: '// Hexagonal Design'
+    description: 'Strict separation between domain, use cases, and infrastructure on both client and server, allowing ORM or database swaps without altering business logic.'
+  frontend:
+    title: '// End-to-End Validation'
+    description: 'RESTful API built with Express, secured via Zod schemas, and backed by relational persistence on NeonDB PostgreSQL.'
+stack:
+  - 'Vite + React'
+  - 'TypeScript'
+  - 'Tailwind CSS'
+  - 'Hexagonal Arch'
+  - 'Express'
+  - 'PostgreSQL (NeonDB)'
+  - 'Zod'
 ---
-
-Full-stack strength training application focused on progressive overload tracking and performance analytics.
-
-### Technical Highlights:
-
-- **Hexagonal Architecture (Ports & Adapters)**: Strict decoupling of domain logic from frameworks and database adapters.
-- **Strict Schema Validation**: End-to-end data integrity guarantees with Zod.
-- **Hybrid Persistence**: Structured relational transactions in PostgreSQL combined with document storage in MongoDB.

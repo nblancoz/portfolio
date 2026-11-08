@@ -27,6 +27,18 @@
     "description": "Track record building production systems for digital banking and B2B healthtech, prioritizing domain decoupling, typed contracts, and automated testing.",
     "currentBadge": "Present"
   },
+  "projectsPage": {
+    "metaTitle": "Projects & Architecture",
+    "metaDescription": "Full-stack systems, real-time AI MVPs, and automation tools built by Nicolás Blanco Zappalà.",
+    "terminalTag": "~/nicolasblanco.dev/projects",
+    "title": "Projects & Architecture",
+    "description": "Full-stack systems, real-time AI MVPs, and automation tools built with clean code and end-to-end type safety.",
+    "privateRepo": "Private Repo (Client)",
+    "github": "GitHub",
+    "githubFrontend": "GitHub (Front)",
+    "githubBackend": "GitHub (Back)",
+    "liveDemo": "Live Demo"
+  },
   "home": {
     "hero": {
       "status": "Software Engineer @ Capgemini • Valencia, ES",
@@ -67,14 +79,18 @@
     "projects": {
       "sectionTag": "// 03. Featured Projects",
       "viewAll": "Explore all projects",
-      "project1Badge": "AI & Real-Time Voice",
+      "project1Badge": "MVP • Multimodal AI",
       "project1Title": "AI Voice Tutor LMS",
       "project1Description": "LMS platform with real-time voice language tutoring, ultra-low latency, and automated multimodal evaluation.",
-      "project1Stack": "TypeScript • Node.js • NeonDB • OpenAI Realtime API",
-      "project2Badge": "Full-Stack • MERN & Hexagonal",
-      "project2Title": "GymQuest",
-      "project2Description": "Full-stack application for strength training planning and progress tracking, built with Hexagonal Architecture principles.",
-      "project2Stack": "React • ExpressJS • PostgreSQL • MongoDB • Zod"
+      "project1Stack": "TypeScript • React • Node.js • OpenAI Realtime",
+      "project2Badge": "Enterprise • Luxury E-Commerce",
+      "project2Title": "Loewe — Global E-Commerce",
+      "project2Description": "Continuous maintenance, production bug fixes, and performance optimization for global luxury catalog and checkout flows.",
+      "project2Stack": "TypeScript • React • SFCC • Node.js",
+      "project3Badge": "Enterprise • Fintech & Banking",
+      "project3Title": "Openbank — Digital Onboarding",
+      "project3Description": "Transactional and verification modules powering customer onboarding at Openbank, built with Hexagonal Architecture and Jest.",
+      "project3Stack": "TypeScript • React • Node.js • Hexagonal • Jest"
     },
     "educationBanner": {
       "badge": "Academic Background",

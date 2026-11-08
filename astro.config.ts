@@ -8,6 +8,12 @@ export default defineConfig({
   output: 'server',
   adapter: vercel(),
   integrations: [react()],
+  redirects: {
+    '/experiencia': '/experience',
+    '/proyectos': '/projects',
+    '/en/experiencia': '/en/experience',
+    '/en/proyectos': '/en/projects',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

@@ -22,10 +22,22 @@
   "experiencePage": {
     "metaTitle": "Experiencia",
     "metaDescription": "Historial profesional de Nicolás Blanco Zappalà construyendo sistemas en producción para banca digital y plataformas cloud.",
-    "terminalTag": "~/nicolasblanco.dev/experiencia",
+    "terminalTag": "~/nicolasblanco.dev/experience",
     "title": "Trayectoria Profesional",
     "description": "Historial construyendo sistemas en producción para banca digital y healthtech B2B, priorizando el desacoplamiento de dominio, contratos tipados y pruebas automatizadas.",
     "currentBadge": "Actual"
+  },
+  "projectsPage": {
+    "metaTitle": "Proyectos & Arquitectura",
+    "metaDescription": "Sistemas full-stack, MVPs con Inteligencia Artificial en tiempo real y herramientas de automatización de Nicolás Blanco Zappalà.",
+    "terminalTag": "~/nicolasblanco.dev/projects",
+    "title": "Proyectos & Arquitectura",
+    "description": "Sistemas full-stack, MVPs con Inteligencia Artificial en tiempo real y herramientas de automatización construidas con código limpio y tipado de extremo a extremo.",
+    "privateRepo": "Repo Privado (Cliente)",
+    "github": "GitHub",
+    "githubFrontend": "GitHub (Front)",
+    "githubBackend": "GitHub (Back)",
+    "liveDemo": "Live Demo"
   },
   "home": {
     "hero": {
@@ -67,14 +79,18 @@
     "projects": {
       "sectionTag": "// 03. Proyectos Destacados",
       "viewAll": "Explorar repositorio de proyectos",
-      "project1Badge": "AI & Real-Time Voice",
+      "project1Badge": "MVP • AI Multimodal",
       "project1Title": "AI Voice Tutor LMS",
-      "project1Description": "Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal automatizada.",
-      "project1Stack": "TypeScript • Node.js • NeonDB • OpenAI Realtime API",
-      "project2Badge": "Full-Stack • MERN & Hexagonal",
-      "project2Title": "GymQuest",
-      "project2Description": "Aplicación full-stack para planificación y seguimiento de entrenamientos de fuerza, construida bajo principios de Arquitectura Hexagonal.",
-      "project2Stack": "React • ExpressJS • PostgreSQL • MongoDB • Zod"
+      "project1Description": "Plataforma LMS con tutoría de idiomas por voz en tiempo real, latencia ultrabaja y evaluación multimodal.",
+      "project1Stack": "TypeScript • React • Node.js • OpenAI Realtime",
+      "project2Badge": "Enterprise • Luxury E-Commerce",
+      "project2Title": "Loewe — Global E-Commerce",
+      "project2Description": "Mantenimiento evolutivo, resolución de incidencias en producción y optimización de flujos de catálogo y checkout global.",
+      "project2Stack": "TypeScript • React • SFCC • Node.js",
+      "project3Badge": "Enterprise • Fintech & Banking",
+      "project3Title": "Openbank — Digital Onboarding",
+      "project3Description": "Módulos transaccionales y de verificación para el alta de clientes en Openbank, bajo Arquitectura Hexagonal y Jest.",
+      "project3Stack": "TypeScript • React • Node.js • Hexagonal • Jest"
     },
     "educationBanner": {
       "badge": "Datos Académicos",

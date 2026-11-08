@@ -1,0 +1,226 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArrowUpRight from '@/components/icons/ArrowUpRight.astro';
+import Lock from '@/components/icons/Lock.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+
+const allEntries = await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`));
+const featuredProjects = allEntries
+  .filter((entry) => entry.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+const secondaryProjects = allEntries
+  .filter((entry) => !entry.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  lang={lang}
+  title={translate('projectsPage.metaTitle')}
+  description={translate('projectsPage.metaDescription')}
+>
+  <div class="space-y-12">
+    <header class="space-y-3 border-b border-zinc-800/80 pb-8">
+      <div class="font-mono text-xs uppercase tracking-wider text-emerald-400">
+        {translate('projectsPage.terminalTag')}
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+        {translate('projectsPage.title')}
+      </h1>
+      <p class="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+        {translate('projectsPage.description')}
+      </p>
+    </header>
+    <div class="space-y-8">
+      {featuredProjects.map((entry) => {
+        const projectId = entry.id.split('/').pop();
+        const isIndigo = entry.data.accentColor === 'indigo';
+        const isAmber = entry.data.accentColor === 'amber';
+        const hoverBorder = isIndigo
+          ? 'hover:border-indigo-500/40'
+          : isAmber
+            ? 'hover:border-amber-500/40'
+            : 'hover:border-emerald-500/40';
+        const badgeClasses = isIndigo
+          ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
+          : isAmber
+            ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+            : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+        const backendTitleColor = isIndigo
+          ? 'text-indigo-400'
+          : isAmber
+            ? 'text-amber-400'
+            : 'text-emerald-400';
+        const frontendTitleColor = isIndigo ? 'text-emerald-400' : 'text-indigo-400';
+        return (
+          <article
+            id={projectId}
+            class:list={[
+              'scroll-mt-24 space-y-6 rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-6 transition-all sm:p-8',
+              hoverBorder,
+            ]}
+          >
+            <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class:list={['rounded border px-2.5 py-0.5 font-mono text-xs', badgeClasses]}
+                  >
+                    {entry.data.badge}
+                  </span>
+                  {entry.data.year && (
+                    <span class="font-mono text-xs text-zinc-500">{entry.data.year}</span>
+                  )}
+                </div>
+                <h2 class="pt-1 text-2xl font-bold text-zinc-100">{entry.data.title}</h2>
+              </div>
+              <div class="flex items-center gap-3 font-mono text-xs">
+                {entry.data.privateRepo ? (
+                  <span class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-zinc-400">
+                    <Lock size={12} class="shrink-0 text-zinc-500" />
+                    <span>
+                      {entry.data.privateRepoLabel || translate('projectsPage.privateRepo')}
+                    </span>
+                  </span>
+                ) : (
+                  <>
+                    {entry.data.githubUrl && (
+                      <a
+                        href={entry.data.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-zinc-200 transition-colors hover:border-zinc-600"
+                      >
+                        <span>{translate('projectsPage.github')}</span>
+                        <ArrowUpRight
+                          size={12}
+                          class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </a>
+                    )}
+                    {entry.data.githubClientUrl && (
+                      <a
+                        href={entry.data.githubClientUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-zinc-200 transition-colors hover:border-zinc-600"
+                      >
+                        <span>{translate('projectsPage.githubFrontend')}</span>
+                        <ArrowUpRight
+                          size={12}
+                          class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </a>
+                    )}
+                    {entry.data.githubServerUrl && (
+                      <a
+                        href={entry.data.githubServerUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-zinc-200 transition-colors hover:border-zinc-600"
+                      >
+                        <span>{translate('projectsPage.githubBackend')}</span>
+                        <ArrowUpRight
+                          size={12}
+                          class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </a>
+                    )}
+                    {entry.data.demoUrl && (
+                      <a
+                        href={entry.data.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group inline-flex items-center gap-1.5 rounded-lg bg-zinc-100 px-3 py-1.5 font-semibold text-zinc-950 transition-colors hover:bg-white"
+                      >
+                        <span>{translate('projectsPage.liveDemo')}</span>
+                        <ArrowUpRight
+                          size={12}
+                          class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </a>
+                    )}
+                  </>
+                )}
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed text-zinc-300 sm:text-base">
+              {entry.data.description}
+            </p>
+            {entry.data.architecture && (
+              <div class="grid grid-cols-1 gap-4 rounded-xl border border-zinc-800/70 bg-zinc-950/80 p-4 text-xs md:grid-cols-2">
+                <div class="space-y-1.5">
+                  <div class:list={['font-mono font-medium', backendTitleColor]}>
+                    {entry.data.architecture.backend.title}
+                  </div>
+                  <p class="leading-relaxed text-zinc-400">
+                    {entry.data.architecture.backend.description}
+                  </p>
+                </div>
+                <div class="space-y-1.5">
+                  <div class:list={['font-mono font-medium', frontendTitleColor]}>
+                    {entry.data.architecture.frontend.title}
+                  </div>
+                  <p class="leading-relaxed text-zinc-400">
+                    {entry.data.architecture.frontend.description}
+                  </p>
+                </div>
+              </div>
+            )}
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs text-zinc-400">
+              {entry.data.stack.map((tech) => (
+                <span class="rounded border border-zinc-800 bg-zinc-900 px-2.5 py-1">{tech}</span>
+              ))}
+            </div>
+          </article>
+        );
+      })}
+      {secondaryProjects.length > 0 && (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {secondaryProjects.map((entry) => {
+            const projectId = entry.id.split('/').pop();
+            const badgeColor =
+              entry.data.accentColor === 'amber'
+                ? 'text-amber-400'
+                : entry.data.accentColor === 'indigo'
+                  ? 'text-indigo-400'
+                  : 'text-emerald-400';
+            return (
+              <article
+                id={projectId}
+                class="scroll-mt-24 flex flex-col justify-between space-y-4 rounded-2xl border border-zinc-800/70 bg-zinc-900/30 p-6"
+              >
+                <div class="space-y-2">
+                  <span class:list={['font-mono text-xs', badgeColor]}>{entry.data.badge}</span>
+                  <h3 class="text-lg font-bold text-zinc-100">{entry.data.title}</h3>
+                  <p class="text-xs leading-relaxed text-zinc-400 sm:text-sm">
+                    {entry.data.description}
+                  </p>
+                </div>
+                <div class="border-t border-zinc-800/60 pt-3 font-mono text-xs text-zinc-500">
+                  {entry.data.stack.join(' · ')}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </div>
+  <script>
+    const target = new URLSearchParams(window.location.search).get('project');
+    if (target) {
+      const element = document.getElementById(target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</BaseLayout>
