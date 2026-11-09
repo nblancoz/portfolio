@@ -1,15 +1,26 @@
 ---
 title: 'B.S. in Computer Science'
-institution: 'Universidad Europea'
-period: 'September 2026 — June 2030'
-modality: 'Online'
+institution: 'Universidad Europea de Madrid'
+period: 'Sep 2026 — Present'
+modality: '100% Online'
 order: 1
-description: 'Higher university education in computing foundations, computer architecture, software engineering, algorithms, and data structures.'
+badge: 'In progress · Online'
+accentColor: 'emerald'
+description: 'Official 240-ECTS university degree pursued 100% online while working full-time as a Software Engineer at Capgemini. Rigorous focus on mathematical foundations, advanced algorithm design, systems architecture, and distributed computing.'
+highlights:
+  - 'Mathematical Foundations & Algorithms: Linear algebra, calculus, statistics, discrete mathematics, time/space complexity analysis, and advanced data structures.'
+  - 'Computer Architecture & Systems: Processor architecture principles, concurrency, memory hierarchy, operating systems, and computer networks.'
+  - 'Software Engineering & Distributed Systems: Architectural patterns, domain-driven design (DDD), reliability, scalability, and cloud computing.'
+  - 'Data & Artificial Intelligence: Relational and distributed databases, data modeling, Machine Learning fundamentals, and large-scale data processing.'
 skills:
-  - 'Software Engineering'
-  - 'Data Structures'
-  - 'Algorithms'
+  - 'Algorithms & Data Structures'
+  - 'Computer Architecture'
   - 'Distributed Systems'
+  - 'Networks & Protocols'
+  - 'Mathematical Foundations'
+  - 'Software Engineering'
+  - 'Relational & NoSQL Databases'
+  - 'Artificial Intelligence'
 ---
 
-University bachelor's degree program focusing on core computer science foundations, discrete mathematics, algorithmic design, and advanced software engineering methodologies for enterprise systems.
+Pursuing an official Computer Science degree 100% online while working full-time as a Software Engineer at Capgemini, delving into the scientific, mathematical, and architectural foundations of computing.

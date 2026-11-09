@@ -18,12 +18,13 @@ const currentPath = Astro.url.pathname;
 const isHome = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
 const isProjects = currentPath === '/projects' || currentPath === '/en/projects';
 const isExperience = currentPath === '/experience' || currentPath === '/en/experience';
+const isEducation = currentPath === '/education' || currentPath === '/en/education';
 
 const navItems = [
   { key: 'nav.home' as const, path: '/', active: isHome },
   { key: 'nav.projects' as const, path: '/projects', active: isProjects },
   { key: 'nav.experience' as const, path: '/experience', active: isExperience },
-  { key: 'nav.education' as const, path: '#', active: false },
+  { key: 'nav.education' as const, path: '/education', active: isEducation },
   { key: 'nav.contact' as const, path: '#', active: false },
 ];
 

@@ -39,6 +39,16 @@
     "githubBackend": "GitHub (Back)",
     "liveDemo": "Live Demo"
   },
+  "educationPage": {
+    "metaTitle": "Formación Académica",
+    "metaDescription": "Combinación de fundamentos teóricos de Ingeniería Informática con formación práctica intensiva en desarrollo de software moderno de Nicolás Blanco Zappalà.",
+    "terminalTag": "~/nicolasblanco.dev/education",
+    "title": "Formación Académica",
+    "description": "Combinación de fundamentos teóricos de Ingeniería Informática con formación práctica intensiva en desarrollo de software moderno.",
+    "tfgLabel": "Proyecto Final de Grado (TFG):",
+    "viewTfg": "Ver TFG",
+    "viewCertificate": "Ver Curso / Credencial"
+  },
   "home": {
     "hero": {
       "status": "Ingeniero de Software @ Capgemini • Valencia, ES",
@@ -95,7 +105,7 @@
     "educationBanner": {
       "badge": "Datos Académicos",
       "title": "Grado en Ingeniería Informática & Grado Superior DAW",
-      "description": "Universidad Europea (Ingeniería Informática y DAW) · The Bridge - EDEM (Bootcamp Full Stack).",
+      "description": "Universidad Europea de Madrid (Ingeniería Informática y DAW) · The Bridge - EDEM (Bootcamp Full Stack).",
       "viewEducation": "Ver Estudios",
       "contact": "Contactar"
     }

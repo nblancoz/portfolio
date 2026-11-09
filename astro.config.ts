@@ -11,8 +11,10 @@ export default defineConfig({
   redirects: {
     '/experiencia': '/experience',
     '/proyectos': '/projects',
+    '/estudios': '/education',
     '/en/experiencia': '/en/experience',
     '/en/proyectos': '/en/projects',
+    '/en/estudios': '/en/education',
   },
   vite: {
     plugins: [tailwindcss()],

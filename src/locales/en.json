@@ -39,6 +39,16 @@
     "githubBackend": "GitHub (Back)",
     "liveDemo": "Live Demo"
   },
+  "educationPage": {
+    "metaTitle": "Academic Education",
+    "metaDescription": "Combination of computer science theoretical foundations with intensive practical training in modern software engineering by Nicolás Blanco Zappalà.",
+    "terminalTag": "~/nicolasblanco.dev/education",
+    "title": "Academic Education",
+    "description": "Combination of computer science theoretical foundations with intensive practical training in modern software engineering.",
+    "tfgLabel": "Final Degree Project (TFG):",
+    "viewTfg": "View TFG",
+    "viewCertificate": "View Course / Credential"
+  },
   "home": {
     "hero": {
       "status": "Software Engineer @ Capgemini • Valencia, ES",
@@ -95,7 +105,7 @@
     "educationBanner": {
       "badge": "Academic Background",
       "title": "B.S. in Computer Science & Higher VET in Web Dev",
-      "description": "Universidad Europea (Computer Science & Higher VET DAW) · The Bridge - EDEM (Full Stack Bootcamp).",
+      "description": "Universidad Europea de Madrid (Computer Science & Higher VET DAW) · The Bridge - EDEM (Full Stack Bootcamp).",
       "viewEducation": "View Education",
       "contact": "Contact"
     }

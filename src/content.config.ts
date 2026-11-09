@@ -56,10 +56,21 @@ const education = defineCollection({
     title: z.string(),
     institution: z.string(),
     period: z.string(),
-    modality: z.string(),
+    modality: z.string().optional(),
     order: z.number(),
-    description: z.string().optional(),
+    badge: z.string(),
+    accentColor: z.enum(['emerald', 'indigo', 'amber']).default('emerald'),
+    description: z.string(),
+    highlights: z.array(z.string()).optional(),
     skills: z.array(z.string()).optional(),
+    certificateUrl: z.string().url().optional(),
+    tfg: z
+      .object({
+        name: z.string(),
+        architecture: z.string(),
+        projectSlug: z.string(),
+      })
+      .optional(),
   }),
 });
 

@@ -1,0 +1,140 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArrowRight from '@/components/icons/ArrowRight.astro';
+import ArrowUpRight from '@/components/icons/ArrowUpRight.astro';
+import { getCollection } from 'astro:content';
+import { getLocalizedPath, useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+
+const allEntries = await getCollection('education', ({ id }) => id.startsWith(`${lang}/`));
+const sortedEntries = allEntries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  lang={lang}
+  title={translate('educationPage.metaTitle')}
+  description={translate('educationPage.metaDescription')}
+>
+  <div class="space-y-12">
+    <header class="space-y-3 border-b border-zinc-800/80 pb-8">
+      <div class="font-mono text-xs uppercase tracking-wider text-emerald-400">
+        {translate('educationPage.terminalTag')}
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+        {translate('educationPage.title')}
+      </h1>
+      <p class="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+        {translate('educationPage.description')}
+      </p>
+    </header>
+    <div class="space-y-6">
+      {sortedEntries.map((entry) => {
+        const isEmerald = entry.data.accentColor === 'emerald';
+        const isIndigo = entry.data.accentColor === 'indigo';
+        const bulletColor = isEmerald
+          ? 'text-emerald-400'
+          : isIndigo
+            ? 'text-indigo-400'
+            : 'text-amber-400';
+        const cardClass = isEmerald
+          ? 'rounded-2xl border border-emerald-500/30 bg-linear-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950 p-6 sm:p-8 space-y-5'
+          : 'rounded-2xl border border-zinc-800/80 bg-zinc-900/40 p-6 sm:p-8 space-y-4';
+        return (
+          <article class={cardClass}>
+            <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
+              <div>
+                <div class="flex items-center gap-2.5">
+                  {isEmerald ? (
+                    <span class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-xs text-emerald-400">
+                      {entry.data.badge}
+                    </span>
+                  ) : (
+                    <span
+                      class:list={[
+                        'font-mono text-xs',
+                        isIndigo ? 'text-indigo-400' : 'text-amber-400',
+                      ]}
+                    >
+                      {entry.data.badge}
+                    </span>
+                  )}
+                </div>
+                <h2 class="mt-2 text-xl font-bold text-zinc-100 sm:text-2xl">{entry.data.title}</h2>
+                <p class="text-sm font-medium text-zinc-400">{entry.data.institution}</p>
+              </div>
+              <div class="font-mono text-xs text-zinc-400 sm:text-right">
+                <div>{entry.data.period}</div>
+              </div>
+            </div>
+            <p
+              class:list={[
+                'text-sm leading-relaxed',
+                isEmerald ? 'text-zinc-300' : 'text-zinc-400',
+              ]}
+            >
+              {entry.data.description}
+            </p>
+            {entry.data.highlights && (
+              <ul class="space-y-2 pt-1 text-xs leading-relaxed text-zinc-300">
+                {entry.data.highlights.map((highlight) => (
+                  <li class="flex items-start gap-2">
+                    <span class:list={['mt-0.5 shrink-0 font-mono', bulletColor]}>▹</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {entry.data.tfg && (
+              <div class="flex flex-col justify-between gap-3 rounded-lg border border-zinc-800/60 bg-zinc-950/70 p-3.5 font-mono text-xs sm:flex-row sm:items-center">
+                <span class="text-zinc-300">
+                  <span class="mr-1.5 text-zinc-400">[TFG]</span>
+                  {translate('educationPage.tfgLabel')}
+                  <strong class="ml-1 text-emerald-400">{entry.data.tfg.name}</strong>
+                  <span class="ml-1 text-zinc-400">({entry.data.tfg.architecture})</span>
+                </span>
+                <a
+                  href={getLocalizedPath(`/projects?project=${entry.data.tfg.projectSlug}`, lang)}
+                  class="group flex shrink-0 items-center gap-1 font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+                >
+                  <span>{translate('educationPage.viewTfg')}</span>
+                  <ArrowRight size={12} class="transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            )}
+            {entry.data.certificateUrl && (
+              <div class="flex items-center">
+                <a
+                  href={entry.data.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex items-center gap-1.5 font-mono text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+                >
+                  <span>{translate('educationPage.viewCertificate')}</span>
+                  <ArrowUpRight
+                    size={12}
+                    class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              </div>
+            )}
+            {entry.data.skills && (
+              <div class="flex flex-wrap gap-2 pt-1">
+                {entry.data.skills.map((skill) => (
+                  <span class="rounded-md border border-zinc-800/80 bg-zinc-950/60 px-2.5 py-1 font-mono text-xs text-zinc-400">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
