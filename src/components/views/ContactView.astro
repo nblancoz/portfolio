@@ -111,6 +111,19 @@ const translate = useTranslations(lang);
             role="alert"
             class="hidden rounded-lg border p-3 font-mono text-xs leading-relaxed"
           ></div>
+          <div
+            style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;"
+            aria-hidden="true"
+          >
+            <label for="company_website">Website</label>
+            <input
+              type="text"
+              id="company_website"
+              name="company_website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div class="space-y-2">
               <label for="name" class="block font-mono text-xs text-zinc-400">
@@ -240,6 +253,7 @@ const translate = useTranslations(lang);
           email: formData.get('email'),
           subject: formData.get('subject'),
           message: formData.get('message'),
+          company_website: formData.get('company_website') || '',
         };
 
         try {

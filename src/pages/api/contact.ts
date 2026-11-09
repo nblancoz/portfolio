@@ -10,6 +10,7 @@ const contactSchema = z.object({
   email: z.string().trim().email(),
   subject: z.string().trim().min(3).max(150),
   message: z.string().trim().min(10).max(5000),
+  company_website: z.string().optional(),
 });
 
 export const POST: APIRoute = async ({ request }) => {
@@ -39,6 +40,7 @@ export const POST: APIRoute = async ({ request }) => {
         email: formData.get('email'),
         subject: formData.get('subject'),
         message: formData.get('message'),
+        company_website: formData.get('company_website'),
       };
     } catch {
       return new Response(
@@ -52,6 +54,19 @@ export const POST: APIRoute = async ({ request }) => {
         }
       );
     }
+  }
+
+  const honeypot = rawData.company_website;
+  if (typeof honeypot === 'string' && honeypot.trim().length > 0) {
+    return new Response(
+      JSON.stringify({
+        success: true,
+      }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
   }
 
   const result = contactSchema.safeParse(rawData);
