@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Nicolás Blanco Zappalà - Software Engineer Portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
@@ -14,9 +14,17 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "astro",
+    "typescript",
+    "react",
+    "tailwind",
+    "full-stack"
+  ],
+  "author": "Nicolás Blanco Zappalà <contacto@nicolasblanco.dev>",
+  "license": "UNLICENSED",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
