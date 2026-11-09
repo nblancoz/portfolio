@@ -38,7 +38,7 @@ const sortedEntries = allEntries.sort((a, b) => a.data.order - b.data.order);
         const isSecond = index === 1;
         const dotColor = isFirst ? 'bg-emerald-400' : isSecond ? 'bg-zinc-600' : 'bg-zinc-700';
         const cardStyle = isFirst
-          ? 'bg-zinc-900/50 border-zinc-800/90'
+          ? 'border-emerald-500/30 bg-linear-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950'
           : isSecond
             ? 'bg-zinc-900/30 border-zinc-800/70'
             : 'bg-zinc-900/20 border-zinc-800/50';

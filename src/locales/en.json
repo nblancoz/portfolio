@@ -74,6 +74,16 @@
     "successMessage": "Message sent successfully! I will get back to you as soon as possible.",
     "errorMessage": "An error occurred while sending the message. Please try again or reach out directly via email."
   },
+  "notFoundPage": {
+    "metaTitle": "404: Page Not Found",
+    "metaDescription": "The route you are trying to access does not exist or has been moved.",
+    "terminalTag": "~/nicolasblanco.dev/404",
+    "statusCode": "404",
+    "statusLabel": "ERROR_NOT_FOUND",
+    "title": "Route Not Found",
+    "description": "The route you are trying to access does not exist, has been removed, or the entered URL is incorrect.",
+    "backHome": "Return to Home"
+  },
   "home": {
     "hero": {
       "status": "Software Engineer @ Capgemini • Valencia, ES",

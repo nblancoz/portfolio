@@ -74,6 +74,16 @@
     "successMessage": "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
     "errorMessage": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o escríbeme directamente por email."
   },
+  "notFoundPage": {
+    "metaTitle": "404: Página no encontrada",
+    "metaDescription": "La ruta a la que intentas acceder no existe o ha sido movida.",
+    "terminalTag": "~/nicolasblanco.dev/404",
+    "statusCode": "404",
+    "statusLabel": "ERROR_NOT_FOUND",
+    "title": "Ruta no encontrada",
+    "description": "La ruta a la que intentas acceder no existe, ha sido eliminada o la URL ingresada es incorrecta.",
+    "backHome": "Volver al Inicio"
+  },
   "home": {
     "hero": {
       "status": "Ingeniero de Software @ Capgemini • Valencia, ES",

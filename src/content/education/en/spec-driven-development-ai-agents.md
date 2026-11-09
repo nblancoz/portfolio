@@ -4,7 +4,7 @@ institution: 'Udemy'
 period: 'November 2026'
 order: 2
 badge: '[Professional Certification · Agentic AI]'
-accentColor: 'emerald'
+accentColor: 'indigo'
 certificateUrl: 'https://www.udemy.com/course/curso-completo-de-spec-driven-development-sdd-y-agentes-ia/'
 description: 'Specialization in Spec-Driven Development (SDD) to steer autonomous AI agents with predictable architectural rigor, moving beyond trial-and-error "vibe coding". Mastery of the formal lifecycle (Specify, Clarify, Plan, Tasks, Implement), context management via CLAUDE.md and AGENTS.md, and agent parallelization with git worktrees.'
 highlights:

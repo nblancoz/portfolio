@@ -4,7 +4,7 @@ institution: 'Udemy'
 period: 'Noviembre 2026'
 order: 2
 badge: '[Certificación Profesional · IA Agéntica]'
-accentColor: 'emerald'
+accentColor: 'indigo'
 certificateUrl: 'https://www.udemy.com/course/curso-completo-de-spec-driven-development-sdd-y-agentes-ia/'
 description: 'Especialización en desarrollo guiado por especificaciones (SDD) para dirigir agentes de IA con rigor arquitectónico y predecible, erradicando el "vibe coding". Dominio del ciclo de vida formal (Specify, Clarify, Plan, Tasks, Implement), gestión de contexto con CLAUDE.md y AGENTS.md, y paralelización de agentes con git worktrees.'
 highlights:
