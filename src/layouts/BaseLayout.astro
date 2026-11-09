@@ -17,7 +17,12 @@ const translate = useTranslations(lang);
 
 const siteTitle = title ? `${title} | ${translate('site.title')}` : translate('site.metaTitle');
 const siteDescription = description || translate('site.metaDescription');
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+const baseUrl = Astro.site || Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl);
+const ogImageUrl = new URL('/og-image.png', baseUrl);
+const cleanPath = Astro.url.pathname.replace(/^\/en/, '') || '/';
+const esAlternateUrl = new URL(cleanPath, baseUrl);
+const enAlternateUrl = new URL(`/en${cleanPath === '/' ? '' : cleanPath}`, baseUrl);
 ---
 
 <!doctype html>
@@ -29,6 +34,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?v=3" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={esAlternateUrl} />
+    <link rel="alternate" hreflang="en" href={enAlternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={esAlternateUrl} />
     <title>{siteTitle}</title>
     <meta name="title" content={siteTitle} />
     <meta name="description" content={siteDescription} />
@@ -40,10 +48,57 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
     <meta property="og:description" content={siteDescription} />
     <meta property="og:site_name" content={translate('site.title')} />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Nicolás Blanco Zappalà - Software Engineer" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url.href} />
     <meta property="twitter:title" content={siteTitle} />
     <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={ogImageUrl} />
+    <meta property="twitter:image:alt" content="Nicolás Blanco Zappalà - Software Engineer" />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Person',
+            '@id': 'https://nicolasblanco.dev/#person',
+            name: 'Nicolás Blanco Zappalà',
+            jobTitle: 'Software Engineer',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Capgemini',
+            },
+            url: 'https://nicolasblanco.dev',
+            sameAs: ['https://linkedin.com/in/nblancoz', 'https://github.com/nblancoz'],
+            knowsAbout: [
+              'TypeScript',
+              'React',
+              'Node.js',
+              'Astro',
+              'Hexagonal Architecture',
+              'Clean Code',
+              'Agentic AI',
+            ],
+          },
+          {
+            '@type': 'WebSite',
+            '@id': 'https://nicolasblanco.dev/#website',
+            url: 'https://nicolasblanco.dev',
+            name: 'Nicolás Blanco Zappalà - Software Engineer Portfolio',
+            publisher: {
+              '@id': 'https://nicolasblanco.dev/#person',
+            },
+            inLanguage: ['es', 'en'],
+          },
+        ],
+      })}
+    />
   </head>
   <body class="relative min-h-screen overflow-x-hidden bg-zinc-950 font-sans text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
     <div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(16,185,129,0.08),rgba(255,255,255,0))]"></div>
