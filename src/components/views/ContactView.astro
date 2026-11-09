@@ -1,0 +1,278 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArrowRight from '@/components/icons/ArrowRight.astro';
+import ArrowUpRight from '@/components/icons/ArrowUpRight.astro';
+import ArrowDown from '@/components/icons/ArrowDown.astro';
+import { useTranslations, type SupportedLanguage } from '@/i18n/utils';
+
+interface Props {
+  lang: SupportedLanguage;
+}
+
+const { lang } = Astro.props;
+const translate = useTranslations(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={translate('contactPage.metaTitle')}
+  description={translate('contactPage.metaDescription')}
+>
+  <div class="w-full space-y-12">
+    <header class="space-y-3 border-b border-zinc-800/80 pb-8">
+      <div class="font-mono text-xs uppercase tracking-wider text-emerald-400">
+        {translate('contactPage.terminalTag')}
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+        {translate('contactPage.title')}
+      </h1>
+      <p class="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+        {translate('contactPage.description')}
+      </p>
+    </header>
+    <div class="grid w-full grid-cols-1 gap-10 lg:grid-cols-5">
+      <div class="min-w-0 space-y-6 lg:col-span-2">
+        <div class="space-y-5 rounded-2xl border border-zinc-800/80 bg-zinc-900/40 p-6">
+          <div class="font-mono text-xs text-zinc-500">{translate('contactPage.metadataTag')}</div>
+          <div class="space-y-4 text-sm">
+            <div>
+              <div class="font-mono text-xs text-zinc-500">
+                {translate('contactPage.emailLabel')}
+              </div>
+              <a
+                href="mailto:nblancozappala@gmail.com"
+                class="mt-0.5 inline-block font-mono text-emerald-400 hover:underline"
+              >
+                nblancozappala@gmail.com
+              </a>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-zinc-500">
+                {translate('contactPage.profilesLabel')}
+              </div>
+              <div class="mt-1.5 flex items-center gap-4 font-mono text-xs">
+                <a
+                  href="https://www.linkedin.com/in/nblancoz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-1 text-zinc-300 transition-colors hover:text-emerald-400"
+                >
+                  <span>LinkedIn</span>
+                  <ArrowUpRight
+                    size={11}
+                    class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+                <a
+                  href="https://github.com/nblancoz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-1 text-zinc-300 transition-colors hover:text-emerald-400"
+                >
+                  <span>GitHub</span>
+                  <ArrowUpRight
+                    size={11}
+                    class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-zinc-800/80 pt-4">
+            <a
+              href={translate('site.cvFile')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex w-full items-center justify-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 font-mono text-xs text-zinc-200 transition-colors hover:border-emerald-500/50 hover:text-emerald-400"
+            >
+              <ArrowDown size={13} class="transition-transform group-hover:translate-y-0.5" />
+              <span>{translate('contactPage.downloadCv')}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="min-w-0 lg:col-span-3">
+        <form
+          id="contact-form"
+          method="POST"
+          action="/api/contact"
+          class="space-y-5 rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-6 sm:p-8"
+        >
+          <div class="flex items-center justify-between border-b border-zinc-800/60 pb-3">
+            <span class="font-mono text-xs text-zinc-400">
+              {translate('contactPage.endpointTag')}
+            </span>
+            <span class="rounded border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[11px] text-emerald-400">
+              {translate('contactPage.statusBadge')}
+            </span>
+          </div>
+          <div
+            id="form-status"
+            role="alert"
+            class="hidden rounded-lg border p-3 font-mono text-xs leading-relaxed"
+          ></div>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="space-y-2">
+              <label for="name" class="block font-mono text-xs text-zinc-400">
+                {translate('contactPage.nameLabel')} <span class="text-emerald-400">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder={translate('contactPage.namePlaceholder')}
+                class="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-emerald-500/60 focus:outline-none"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="email" class="block font-mono text-xs text-zinc-400">
+                {translate('contactPage.emailInputLabel')} <span class="text-emerald-400">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder={translate('contactPage.emailPlaceholder')}
+                class="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-emerald-500/60 focus:outline-none"
+              />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label for="subject" class="block font-mono text-xs text-zinc-400">
+              {translate('contactPage.subjectLabel')} <span class="text-emerald-400">*</span>
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder={translate('contactPage.subjectPlaceholder')}
+              class="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-emerald-500/60 focus:outline-none"
+            />
+          </div>
+          <div class="space-y-2">
+            <label for="message" class="block font-mono text-xs text-zinc-400">
+              {translate('contactPage.messageLabel')} <span class="text-emerald-400">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder={translate('contactPage.messagePlaceholder')}
+              class="w-full resize-none rounded-lg border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-emerald-500/60 focus:outline-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            id="submit-button"
+            disabled
+            class="group flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-500 px-5 py-3 font-mono text-sm font-semibold text-zinc-950 transition-all hover:bg-emerald-400 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-500"
+          >
+            <span id="submit-text">{translate('contactPage.submitButton')}</span>
+            <ArrowRight
+              size={14}
+              class="transition-transform group-hover:translate-x-0.5 group-disabled:hidden"
+            />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script
+    define:vars={{
+      sendingText: translate('contactPage.sendingButton'),
+      defaultText: translate('contactPage.submitButton'),
+      successMsg: translate('contactPage.successMessage'),
+      errorMsg: translate('contactPage.errorMessage'),
+    }}
+  >
+    const form = document.getElementById('contact-form');
+    const statusBox = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-button');
+    const submitText = document.getElementById('submit-text');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function isFormValid() {
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const subjectVal = subjectInput ? subjectInput.value.trim() : '';
+      const messageVal = messageInput ? messageInput.value.trim() : '';
+
+      return (
+        nameVal.length >= 2 &&
+        emailRegex.test(emailVal) &&
+        subjectVal.length >= 3 &&
+        messageVal.length >= 10
+      );
+    }
+
+    function updateButtonState() {
+      if (submitBtn) {
+        submitBtn.disabled = !isFormValid();
+      }
+    }
+
+    if (form && statusBox && submitBtn && submitText) {
+      form.addEventListener('input', updateButtonState);
+      updateButtonState();
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!isFormValid()) {
+          return;
+        }
+        statusBox.classList.add('hidden');
+        statusBox.className = 'hidden rounded-lg border p-3 font-mono text-xs leading-relaxed';
+        submitBtn.disabled = true;
+        submitText.textContent = sendingText;
+
+        const formData = new FormData(form);
+        const payload = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+        };
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json().catch(() => ({}));
+
+          if (res.ok && data.success) {
+            statusBox.textContent = successMsg;
+            statusBox.className =
+              'rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 font-mono text-xs leading-relaxed text-emerald-400';
+            form.reset();
+          } else {
+            statusBox.textContent = data.error || errorMsg;
+            statusBox.className =
+              'rounded-lg border border-rose-500/30 bg-rose-500/10 p-3 font-mono text-xs leading-relaxed text-rose-400';
+          }
+        } catch {
+          statusBox.textContent = errorMsg;
+          statusBox.className =
+            'rounded-lg border border-rose-500/30 bg-rose-500/10 p-3 font-mono text-xs leading-relaxed text-rose-400';
+        } finally {
+          submitText.textContent = defaultText;
+          updateButtonState();
+        }
+      });
+    }
+  </script>
+</BaseLayout>

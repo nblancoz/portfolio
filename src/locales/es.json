@@ -49,6 +49,31 @@
     "viewTfg": "Ver TFG",
     "viewCertificate": "Ver Curso / Credencial"
   },
+  "contactPage": {
+    "metaTitle": "Contacto | Nicolás Blanco Zappalà",
+    "metaDescription": "¿Tienes una propuesta técnica, un reto de arquitectura o quieres hablar sobre un proyecto? Inicia una conversación o conecta conmigo.",
+    "terminalTag": "~/nicolasblanco.dev/contact",
+    "title": "Iniciar Conversación",
+    "description": "¿Tienes una propuesta técnica, un reto de arquitectura o quieres hablar sobre un proyecto? Envíame un mensaje directo o conecta conmigo por mis canales profesionales.",
+    "metadataTag": "// METADATOS DE CONTACTO",
+    "emailLabel": "Correo Directo",
+    "profilesLabel": "Perfiles",
+    "downloadCv": "Descargar Currículum Completo (PDF)",
+    "endpointTag": "POST /api/contact",
+    "statusBadge": "Zod Validated · SSR",
+    "nameLabel": "nombre",
+    "namePlaceholder": "Ej. Ana García",
+    "emailInputLabel": "email",
+    "emailPlaceholder": "ana@empresa.com",
+    "subjectLabel": "asunto",
+    "subjectPlaceholder": "Oportunidad Software Engineer / Consulta Técnica",
+    "messageLabel": "mensaje",
+    "messagePlaceholder": "Hola Nicolás, hemos visto tu portafolio y...",
+    "submitButton": "Enviar Mensaje",
+    "sendingButton": "Enviando...",
+    "successMessage": "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
+    "errorMessage": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o escríbeme directamente por email."
+  },
   "home": {
     "hero": {
       "status": "Ingeniero de Software @ Capgemini • Valencia, ES",

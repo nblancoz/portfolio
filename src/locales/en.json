@@ -49,6 +49,31 @@
     "viewTfg": "View TFG",
     "viewCertificate": "View Course / Credential"
   },
+  "contactPage": {
+    "metaTitle": "Contact | Nicolás Blanco Zappalà",
+    "metaDescription": "Have a technical proposal, an architectural challenge, or want to discuss a project? Start a conversation or connect with me.",
+    "terminalTag": "~/nicolasblanco.dev/contact",
+    "title": "Start a Conversation",
+    "description": "Have a technical proposal, an architectural challenge, or want to discuss a project? Send me a direct message or connect with me through my professional channels.",
+    "metadataTag": "// CONTACT METADATA",
+    "emailLabel": "Direct Email",
+    "profilesLabel": "Profiles",
+    "downloadCv": "Download Full Resume (PDF)",
+    "endpointTag": "POST /api/contact",
+    "statusBadge": "Zod Validated · SSR",
+    "nameLabel": "name",
+    "namePlaceholder": "e.g. Jane Doe",
+    "emailInputLabel": "email",
+    "emailPlaceholder": "jane@company.com",
+    "subjectLabel": "subject",
+    "subjectPlaceholder": "Software Engineer Opportunity / Technical Inquiry",
+    "messageLabel": "message",
+    "messagePlaceholder": "Hi Nicolás, we checked out your portfolio and...",
+    "submitButton": "Send Message",
+    "sendingButton": "Sending...",
+    "successMessage": "Message sent successfully! I will get back to you as soon as possible.",
+    "errorMessage": "An error occurred while sending the message. Please try again or reach out directly via email."
+  },
   "home": {
     "hero": {
       "status": "Software Engineer @ Capgemini • Valencia, ES",

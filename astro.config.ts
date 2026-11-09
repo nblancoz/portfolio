@@ -12,12 +12,20 @@ export default defineConfig({
     '/experiencia': '/experience',
     '/proyectos': '/projects',
     '/estudios': '/education',
+    '/contacto': '/contact',
     '/en/experiencia': '/en/experience',
     '/en/proyectos': '/en/projects',
     '/en/estudios': '/en/education',
+    '/en/contacto': '/en/contact',
+  },
+  security: {
+    checkOrigin: false,
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      cors: true,
+    },
   },
   i18n: {
     defaultLocale: 'es',
