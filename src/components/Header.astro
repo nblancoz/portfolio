@@ -15,11 +15,27 @@ const { lang } = Astro.props;
 const translate = useTranslations(lang);
 
 const currentPath = Astro.url.pathname;
-const isHome = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
-const isProjects = currentPath === '/projects' || currentPath === '/en/projects';
-const isExperience = currentPath === '/experience' || currentPath === '/en/experience';
-const isEducation = currentPath === '/education' || currentPath === '/en/education';
-const isContact = currentPath === '/contact' || currentPath === '/en/contact';
+const isHome = currentPath === '/' || currentPath === '/es' || currentPath === '/es/';
+const isProjects =
+  currentPath === '/projects' ||
+  currentPath === '/projects/' ||
+  currentPath === '/es/projects' ||
+  currentPath === '/es/projects/';
+const isExperience =
+  currentPath === '/experience' ||
+  currentPath === '/experience/' ||
+  currentPath === '/es/experience' ||
+  currentPath === '/es/experience/';
+const isEducation =
+  currentPath === '/education' ||
+  currentPath === '/education/' ||
+  currentPath === '/es/education' ||
+  currentPath === '/es/education/';
+const isContact =
+  currentPath === '/contact' ||
+  currentPath === '/contact/' ||
+  currentPath === '/es/contact' ||
+  currentPath === '/es/contact/';
 
 const navItems = [
   { key: 'nav.home' as const, path: '/', active: isHome },
@@ -67,17 +83,6 @@ const enPath = getSwitchLocalePath(Astro.url, 'en');
     <div class="flex items-center gap-3">
       <div class="flex items-center rounded-lg border border-zinc-800 bg-zinc-900 p-1 font-mono text-xs">
         <a
-          href={esPath}
-          data-lang-switch
-          class:list={[
-            'rounded-md px-2 py-1 font-medium transition-all',
-            lang === 'es' ? 'bg-zinc-800 text-emerald-400' : 'text-zinc-500 hover:text-zinc-300',
-          ]}
-          aria-label="Español"
-        >
-          ES
-        </a>
-        <a
           href={enPath}
           data-lang-switch
           class:list={[
@@ -87,6 +92,17 @@ const enPath = getSwitchLocalePath(Astro.url, 'en');
           aria-label="English"
         >
           EN
+        </a>
+        <a
+          href={esPath}
+          data-lang-switch
+          class:list={[
+            'rounded-md px-2 py-1 font-medium transition-all',
+            lang === 'es' ? 'bg-zinc-800 text-emerald-400' : 'text-zinc-500 hover:text-zinc-300',
+          ]}
+          aria-label="Español"
+        >
+          ES
         </a>
       </div>
     </div>

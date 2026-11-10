@@ -20,9 +20,9 @@ const siteDescription = description || translate('site.metaDescription');
 const baseUrl = Astro.site || Astro.url.origin;
 const canonicalUrl = new URL(Astro.url.pathname, baseUrl);
 const ogImageUrl = new URL('/og-image.png', baseUrl);
-const cleanPath = Astro.url.pathname.replace(/^\/en/, '') || '/';
-const esAlternateUrl = new URL(cleanPath, baseUrl);
-const enAlternateUrl = new URL(`/en${cleanPath === '/' ? '' : cleanPath}`, baseUrl);
+const cleanPath = Astro.url.pathname.replace(/^\/es(?:\/|$)/, '/') || '/';
+const enAlternateUrl = new URL(cleanPath, baseUrl);
+const esAlternateUrl = new URL(`/es${cleanPath === '/' ? '' : cleanPath}`, baseUrl);
 ---
 
 <!doctype html>
@@ -34,9 +34,9 @@ const enAlternateUrl = new URL(`/en${cleanPath === '/' ? '' : cleanPath}`, baseU
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?v=3" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="es" href={esAlternateUrl} />
     <link rel="alternate" hreflang="en" href={enAlternateUrl} />
-    <link rel="alternate" hreflang="x-default" href={esAlternateUrl} />
+    <link rel="alternate" hreflang="es" href={esAlternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={enAlternateUrl} />
     <title>{siteTitle}</title>
     <meta name="title" content={siteTitle} />
     <meta name="description" content={siteDescription} />
@@ -94,7 +94,7 @@ const enAlternateUrl = new URL(`/en${cleanPath === '/' ? '' : cleanPath}`, baseU
             publisher: {
               '@id': 'https://nicolasblanco.dev/#person',
             },
-            inLanguage: ['es', 'en'],
+            inLanguage: ['en', 'es'],
           },
         ],
       })}

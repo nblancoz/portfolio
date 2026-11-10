@@ -6,8 +6,8 @@ export type TranslationKey = NestedKeyOf<LocaleSchema>;
 
 export function getLangFromUrl(url: URL): SupportedLanguage {
   const [, lang] = url.pathname.split('/');
-  if (lang === 'en') {
-    return 'en';
+  if (lang === 'es') {
+    return 'es';
   }
   return defaultLang;
 }
@@ -23,7 +23,6 @@ export function useTranslations(lang: SupportedLanguage) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
-        // Fallback to default language (es)
         let fallbackValue: unknown = locales[defaultLang];
         for (const fk of keys) {
           if (fallbackValue && typeof fallbackValue === 'object' && fk in fallbackValue) {
@@ -45,20 +44,18 @@ export function getLocalizedPath(path: string, lang: SupportedLanguage): string 
   if (lang === defaultLang) {
     return cleanPath;
   }
-  return `/en${cleanPath === '/' ? '' : cleanPath}`;
+  return `/es${cleanPath === '/' ? '' : cleanPath}`;
 }
 
 export function getSwitchLocalePath(currentUrl: URL, targetLang: SupportedLanguage): string {
   const pathname = currentUrl.pathname;
-  const isCurrentlyEn = pathname.startsWith('/en');
+  const isCurrentlyEs = pathname === '/es' || pathname.startsWith('/es/');
 
-  // Strip leading /en if present
   let basePath = pathname;
-  if (isCurrentlyEn) {
-    basePath = pathname.replace(/^\/en(?:\/|$)/, '/');
+  if (isCurrentlyEs) {
+    basePath = pathname.replace(/^\/es(?:\/|$)/, '/');
   }
 
-  // Ensure clean path
   if (!basePath.startsWith('/')) {
     basePath = `/${basePath}`;
   }
@@ -67,5 +64,5 @@ export function getSwitchLocalePath(currentUrl: URL, targetLang: SupportedLangua
     return basePath;
   }
 
-  return `/en${basePath === '/' ? '' : basePath}`;
+  return `/es${basePath === '/' ? '' : basePath}`;
 }

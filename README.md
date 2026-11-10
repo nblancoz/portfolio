@@ -14,7 +14,7 @@ Personal engineering portfolio of **Nicolás Blanco Zappalà**, Software Enginee
 
 - **Framework**: Astro 5 configured in SSR mode (`output: 'server'`) with `@astrojs/vercel` adapter for serverless API endpoints and lightning-fast edge delivery.
 - **Styling**: Tailwind CSS v4 powered by the official `@tailwindcss/vite` plugin, customized with terminal aesthetics, emerald accents, and dark theme consistency.
-- **Internationalization (i18n)**: Native bilingual routing (`/` for Spanish default, `/en` for English) with strict JSON locale symmetry across all views.
+- **Internationalization (i18n)**: Native bilingual routing (`/` for English default, `/es` for Spanish) with strict JSON locale symmetry across all views.
 - **Type Safety**: End-to-end type safety using strict TypeScript schemas and Astro Content Collections backed by Zod validators.
 - **Contact Pipeline**: SSR endpoint (`POST /api/contact`) backed by the Resend SDK, secured with honeypot bot mitigation, length constraints, and HTML entity sanitization.
 - **SEO & Social**: Automated multilingual sitemap (`/sitemap.xml`) with `xhtml:link` alternates, standard `robots.txt`, dynamic JSON-LD Schema.org structured data, and high-resolution OpenGraph cards (1200 × 630 px).
@@ -63,7 +63,7 @@ portfolio/
 │   │   ├── api/contact.ts      # Contact form submission handler
 │   │   ├── 404.astro           # Custom terminal 404 page
 │   │   ├── sitemap.xml.ts      # Dynamic multilingual XML sitemap
-│   │   └── en/                 # English route mirrors
+│   │   └── es/                 # Spanish route mirrors
 │   ├── styles/global.css       # Tailwind CSS v4 entrypoint
 │   └── templates/              # Transactional email templates
 ├── astro.config.ts             # Astro & Vite configuration

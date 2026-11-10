@@ -3,40 +3,40 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 interface RouteDefinition {
-  es: string;
   en: string;
+  es: string;
   priority: string;
   changefreq: string;
 }
 
 const routes: RouteDefinition[] = [
   {
-    es: '/',
-    en: '/en',
+    en: '/',
+    es: '/es',
     priority: '1.0',
     changefreq: 'weekly',
   },
   {
-    es: '/experience',
-    en: '/en/experience',
+    en: '/experience',
+    es: '/es/experience',
     priority: '0.9',
     changefreq: 'monthly',
   },
   {
-    es: '/projects',
-    en: '/en/projects',
+    en: '/projects',
+    es: '/es/projects',
     priority: '0.9',
     changefreq: 'monthly',
   },
   {
-    es: '/education',
-    en: '/en/education',
+    en: '/education',
+    es: '/es/education',
     priority: '0.8',
     changefreq: 'monthly',
   },
   {
-    es: '/contact',
-    en: '/en/contact',
+    en: '/contact',
+    es: '/es/contact',
     priority: '0.8',
     changefreq: 'monthly',
   },
@@ -48,18 +48,20 @@ export const GET: APIRoute = ({ site, url }) => {
   const urlEntries = routes
     .flatMap((route) => [
       {
-        loc: `${baseUrl}${route.es}`,
-        lang: 'es',
-        alternate: `${baseUrl}${route.en}`,
-        alternateLang: 'en',
-        priority: route.priority,
-        changefreq: route.changefreq,
-      },
-      {
         loc: `${baseUrl}${route.en}`,
         lang: 'en',
         alternate: `${baseUrl}${route.es}`,
         alternateLang: 'es',
+        defaultUrl: `${baseUrl}${route.en}`,
+        priority: route.priority,
+        changefreq: route.changefreq,
+      },
+      {
+        loc: `${baseUrl}${route.es}`,
+        lang: 'es',
+        alternate: `${baseUrl}${route.en}`,
+        alternateLang: 'en',
+        defaultUrl: `${baseUrl}${route.en}`,
         priority: route.priority,
         changefreq: route.changefreq,
       },
@@ -69,6 +71,7 @@ export const GET: APIRoute = ({ site, url }) => {
     <loc>${entry.loc}</loc>
     <xhtml:link rel="alternate" hreflang="${entry.lang}" href="${entry.loc}" />
     <xhtml:link rel="alternate" hreflang="${entry.alternateLang}" href="${entry.alternate}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${entry.defaultUrl}" />
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority}</priority>
   </url>`

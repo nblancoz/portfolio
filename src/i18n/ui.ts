@@ -1,20 +1,20 @@
-import es from '../locales/es.json';
 import en from '../locales/en.json';
+import es from '../locales/es.json';
 import type { StrictlyMatched } from './types';
 
-export type LocaleSchema = typeof es;
+export type LocaleSchema = typeof en;
 
-const _enMatchesEs: StrictlyMatched<typeof es, typeof en> = en;
+const _esMatchesEn: StrictlyMatched<typeof en, typeof es> = es;
 
 export const languages = {
-  es: 'Español',
   en: 'English',
+  es: 'Español',
 } as const;
 
 export type SupportedLanguage = keyof typeof languages;
-export const defaultLang: SupportedLanguage = 'es';
+export const defaultLang: SupportedLanguage = 'en';
 
 export const locales: Record<SupportedLanguage, LocaleSchema> = {
-  es,
-  en: _enMatchesEs as LocaleSchema,
+  en,
+  es: _esMatchesEn as LocaleSchema,
 };
