@@ -1,7 +1,7 @@
 ---
 title: 'Grado en Ingeniería Informática'
 institution: 'Universidad Europea de Madrid'
-period: 'Sep 2026 — Presente'
+period: 'Actual'
 modality: 'Modalidad 100% Online'
 order: 1
 badge: 'En curso · Modalidad Online'

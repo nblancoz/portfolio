@@ -1,8 +1,8 @@
 ---
 title: 'GymQuest'
 badge: 'Full-Stack · TFG DAW'
-year: '2024'
-order: 4
+year: '2026'
+order: 3
 featured: true
 accentColor: 'indigo'
 privateRepo: false

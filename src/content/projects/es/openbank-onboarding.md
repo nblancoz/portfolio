@@ -2,7 +2,7 @@
 title: 'Openbank — Digital Onboarding Core'
 badge: 'Enterprise · Fintech & Banking'
 year: '2025 — 2026'
-order: 3
+order: 4
 featured: true
 accentColor: 'indigo'
 privateRepo: true

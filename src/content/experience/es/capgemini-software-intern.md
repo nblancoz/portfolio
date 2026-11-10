@@ -1,6 +1,7 @@
 ---
 title: 'Desarrollador de Software (Prácticas)'
 company: 'Capgemini'
+logo: '/logos/capgemini.svg'
 roleContext: 'Modernización y Arquitectura Web'
 location: 'Valencia, ES (Híbrido)'
 period: 'Febrero 2024 — Julio 2024'

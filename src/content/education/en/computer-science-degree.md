@@ -1,7 +1,7 @@
 ---
 title: 'B.S. in Computer Science'
 institution: 'Universidad Europea de Madrid'
-period: 'Sep 2026 — Present'
+period: 'Current'
 modality: '100% Online'
 order: 1
 badge: 'In progress · Online'

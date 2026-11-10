@@ -1,6 +1,7 @@
 ---
 title: 'Ingeniero de Software'
 company: 'Capgemini'
+logo: '/logos/capgemini.svg'
 roleContext: 'Loewe (Actual) · Openbank (ODS)'
 location: 'Valencia, ES (Híbrido)'
 period: 'Marzo 2025 — Actual'

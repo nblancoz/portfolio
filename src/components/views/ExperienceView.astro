@@ -56,20 +56,32 @@ const sortedEntries = allEntries.sort((a, b) => a.data.order - b.data.order);
               ]}
             />
             <div class:list={['rounded-2xl border p-6 sm:p-8 space-y-6', cardStyle]}>
-              <div class="flex flex-col justify-between gap-2 border-b border-zinc-800/60 pb-4 sm:flex-row sm:items-center">
-                <div>
-                  <div class="flex items-center gap-2.5">
-                    <h2 class="text-xl font-bold text-zinc-100">{entry.data.title}</h2>
-                    {entry.data.current && (
-                      <span class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[11px] text-emerald-400">
-                        {translate('experiencePage.currentBadge')}
-                      </span>
-                    )}
+              <div class="flex flex-col justify-between gap-3 border-b border-zinc-800/60 pb-4 sm:flex-row sm:items-center">
+                <div class="flex items-start gap-3.5">
+                  {entry.data.logo && (
+                    <div class="mt-0.5 flex size-9 shrink-0 items-center justify-center">
+                      <img
+                        src={entry.data.logo}
+                        alt={entry.data.company}
+                        class="size-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <div class="flex items-center gap-2.5">
+                      <h2 class="text-xl font-bold text-zinc-100">{entry.data.title}</h2>
+                      {entry.data.current && (
+                        <span class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[11px] text-emerald-400">
+                          {translate('experiencePage.currentBadge')}
+                        </span>
+                      )}
+                    </div>
+                    <p class="mt-0.5 text-sm font-medium text-zinc-400">
+                      {entry.data.company}
+                      {entry.data.roleContext ? ` · ${entry.data.roleContext}` : ''}
+                    </p>
                   </div>
-                  <p class="mt-0.5 text-sm font-medium text-zinc-400">
-                    {entry.data.company}
-                    {entry.data.roleContext ? ` · ${entry.data.roleContext}` : ''}
-                  </p>
                 </div>
                 <div class="font-mono text-xs text-zinc-500 sm:text-right">
                   <div>{entry.data.period}</div>

@@ -1,6 +1,7 @@
 ---
 title: 'Software Developer (Intern)'
 company: 'Capgemini'
+logo: '/logos/capgemini.svg'
 roleContext: 'Legacy Modernization & Web Architecture'
 location: 'Valencia, ES (Hybrid)'
 period: 'February 2024 — July 2024'

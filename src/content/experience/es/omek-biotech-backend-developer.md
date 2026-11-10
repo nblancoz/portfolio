@@ -1,6 +1,7 @@
 ---
 title: 'Desarrollador Backend'
 company: 'Omek Biotech'
+logo: '/logos/omek.png'
 location: 'Valencia, ES (Remoto)'
 period: 'Agosto 2024 — Diciembre 2024'
 current: false
