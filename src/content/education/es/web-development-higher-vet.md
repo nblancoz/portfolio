@@ -6,6 +6,7 @@ modality: 'Modalidad 100% Online'
 order: 3
 badge: '[Título Oficial Completado]'
 accentColor: 'indigo'
+logo: '/logos/universidad-europea.svg'
 description: 'Ciclo formativo de grado superior oficial de 2.000 horas lectivas enfocado en ingeniería de software web integral. Dominio de arquitecturas cliente-servidor distribuidas, diseño y modelado de bases de datos relacionales, despliegue en producción y desarrollo web full stack de alto nivel.'
 highlights:
   - 'Desarrollo en Entorno Cliente: Programación avanzada con JavaScript/TypeScript, manipulación del DOM, reactividad, patrones de diseño asíncronos y consumo seguro de APIs.'

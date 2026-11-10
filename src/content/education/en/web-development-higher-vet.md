@@ -6,6 +6,7 @@ modality: '100% Online'
 order: 3
 badge: '[Official Degree Completed]'
 accentColor: 'indigo'
+logo: '/logos/universidad-europea.svg'
 description: 'Official 2,000-hour higher vocational qualification centered on end-to-end web software engineering. Mastery of distributed client-server architectures, relational database modeling and optimization, production deployment, and high-standard full stack web development.'
 highlights:
   - 'Client-Side Web Development: Advanced programming with JavaScript/TypeScript, DOM manipulation, reactivity, asynchronous design patterns, and secure API integration.'

@@ -65,6 +65,7 @@ const education = defineCollection({
     highlights: z.array(z.string()).optional(),
     skills: z.array(z.string()).optional(),
     certificateUrl: z.string().url().optional(),
+    logo: z.string().optional(),
     tfg: z
       .object({
         name: z.string(),

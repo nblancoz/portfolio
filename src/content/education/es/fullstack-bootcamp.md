@@ -5,6 +5,7 @@ period: 'Sep 2023 — Ene 2024'
 order: 4
 badge: '[Formación Intensiva · 480h]'
 accentColor: 'amber'
+logo: '/logos/the-bridge.svg'
 description: 'Programa inmersivo de alto rendimiento de 480 horas presenciales de formación técnica práctica. Especialización integral en el ecosistema JavaScript/TypeScript moderno, abarcando arquitecturas frontend reactivas avanzadas, diseño de microservicios y APIs REST, persistencia políglota y automatización DevOps.'
 highlights:
   - 'Desarrollo Frontend Reactivo: Dominio de TypeScript, React.js (componentes funcionales y hooks avanzados), gestión de estado global con Redux y Context API, arquitecturas SPA y testing E2E con Cypress.'

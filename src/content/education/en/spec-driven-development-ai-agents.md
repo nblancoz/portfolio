@@ -6,6 +6,7 @@ order: 2
 badge: '[Professional Certification · Agentic AI]'
 accentColor: 'indigo'
 certificateUrl: 'https://www.udemy.com/course/curso-completo-de-spec-driven-development-sdd-y-agentes-ia/'
+logo: '/logos/udemy.svg'
 description: 'Specialization in Spec-Driven Development (SDD) to steer autonomous AI agents with predictable architectural rigor, moving beyond trial-and-error "vibe coding". Mastery of the formal lifecycle (Specify, Clarify, Plan, Tasks, Implement), context management via CLAUDE.md and AGENTS.md, and agent parallelization with git worktrees.'
 highlights:
   - 'End-to-end SDD lifecycle: Implementing the complete workflow with GitHub Spec Kit, OpenSpec, and AWS Kiro, orchestrating agentic engines including Claude Code and Codex.'

@@ -5,6 +5,7 @@ period: 'Sep 2023 — Jan 2024'
 order: 4
 badge: '[Intensive Training · 480h]'
 accentColor: 'amber'
+logo: '/logos/the-bridge.svg'
 description: 'High-performance 480-hour immersive hands-on engineering program. End-to-end specialization in the modern JavaScript/TypeScript ecosystem, spanning reactive frontend architectures, microservices and REST API design, polyglot persistence, and DevOps automation.'
 highlights:
   - 'Reactive Frontend Development: Mastery of TypeScript, React.js (functional components and advanced hooks), global state management with Redux and Context API, SPA architectures, and E2E testing with Cypress.'

@@ -6,6 +6,7 @@ modality: '100% Online'
 order: 1
 badge: 'In progress · Online'
 accentColor: 'emerald'
+logo: '/logos/universidad-europea.svg'
 description: 'Official 240-ECTS university degree pursued 100% online while working full-time as a Software Engineer at Capgemini. Rigorous focus on mathematical foundations, advanced algorithm design, systems architecture, and distributed computing.'
 highlights:
   - 'Mathematical Foundations & Algorithms: Linear algebra, calculus, statistics, discrete mathematics, time/space complexity analysis, and advanced data structures.'

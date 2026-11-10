@@ -6,6 +6,7 @@ modality: 'Modalidad 100% Online'
 order: 1
 badge: 'En curso · Modalidad Online'
 accentColor: 'emerald'
+logo: '/logos/universidad-europea.svg'
 description: 'Formación universitaria oficial de 240 ECTS cursada en modalidad 100% online, compatibilizada activamente a tiempo completo con mi puesto de Ingeniero de Software en Capgemini. Enfoque riguroso en fundamentos matemáticos, algoritmia avanzada, arquitectura de sistemas y computación distribuida.'
 highlights:
   - 'Fundamentos Matemáticos & Algoritmia: Álgebra lineal, cálculo, estadística, matemática discreta, análisis de complejidad temporal/espacial y estructuras de datos avanzadas.'
