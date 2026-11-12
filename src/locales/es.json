@@ -137,12 +137,12 @@
       "project3Description": "Módulos transaccionales y de verificación para el alta de clientes en Openbank, bajo Arquitectura Hexagonal y Jest.",
       "project3Stack": "TypeScript • React • Node.js • Hexagonal • Jest"
     },
-    "educationBanner": {
-      "badge": "Datos Académicos",
-      "title": "Grado en Ingeniería Informática & Grado Superior DAW",
-      "description": "Universidad Europea de Madrid (Ingeniería Informática y DAW) · The Bridge - EDEM (Bootcamp Full Stack).",
-      "viewEducation": "Ver Estudios",
-      "contact": "Contactar"
+    "contactCta": {
+      "badge": "Colaboración & Asesoría",
+      "title": "¿Hablamos sobre tu próximo proyecto?",
+      "description": "Disfruto resolviendo problemas complejos y diseñando arquitecturas limpias. Si necesitas asesoría técnica o buscas un colaborador independiente para tu producto, envíame un mensaje y le damos forma a la idea.",
+      "primaryButton": "Enviar mensaje",
+      "secondaryButton": "LinkedIn"
     }
   }
 }

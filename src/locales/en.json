@@ -137,12 +137,12 @@
       "project3Description": "Transactional and verification modules powering customer onboarding at Openbank, built with Hexagonal Architecture and Jest.",
       "project3Stack": "TypeScript • React • Node.js • Hexagonal • Jest"
     },
-    "educationBanner": {
-      "badge": "Academic Background",
-      "title": "B.S. in Computer Science & Higher VET in Web Dev",
-      "description": "Universidad Europea de Madrid (Computer Science & Higher VET DAW) · The Bridge - EDEM (Full Stack Bootcamp).",
-      "viewEducation": "View Education",
-      "contact": "Contact"
+    "contactCta": {
+      "badge": "Advisory & Collaboration",
+      "title": "Let's talk about your next project.",
+      "description": "I enjoy solving complex problems and designing clean architectures. If you need technical consulting or an independent collaborator for your product, send me a message and let's shape the idea together.",
+      "primaryButton": "Send a message",
+      "secondaryButton": "LinkedIn"
     }
   }
 }
